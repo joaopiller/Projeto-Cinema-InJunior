@@ -1,8 +1,16 @@
-# React + Vite
+Projeto C{IN}EMA In Júnior 🎥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desenvolvedores:
+- João Vicente Piller Menezes (front-end)
+- Flávio Leonardo Figueira Flores (front-end)
+- Rafael Junqueira Portela (back-end)
+- Vitor Lemos Silva (back-end)
+- ícaro D'Ávila Santos (back-end)
+- Paulo Jorge Campos Cardoso (back-end)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologias Utilizadas:
+- JavaScript
+- CSS
+- HTML
+- NodeJS
+- ReactJS
