@@ -36,6 +36,11 @@
     line-height: 1.6rem;
 }
 
+.socialMedia {
+    display: flex;
+    gap: .5rem
+}
+
 .footerCopy {
     height: 2.5rem;
     background-color: var(--sombra2-900);

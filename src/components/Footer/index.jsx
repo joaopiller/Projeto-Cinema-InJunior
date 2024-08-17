@@ -13,9 +13,9 @@ export default function Footer() {
                         <h2>Fale conosco</h2>
                         <p>contato@injunior.com.br</p>
                         <div className={styles.socialMedia}>
-                            <a href="https://www.instagram.com/injunioruff/"><img src="/src/assets/Icone-Instagram.svg" alt="Logo Instagram" /></a>
-                            <a href="https://www.facebook.com/injunioruff/"><img src="/src/assets/Icone-Facebook.svg" alt="Logo Facebook" /></a>
-                            <a href="https://www.linkedin.com/company/in-junior/?originalSubdomain=br"><img src="/src/assets/Icone-Linkedin.svg" alt="Logo Linkedin" /></a>
+                            <a href="https://www.instagram.com/injunioruff/" target='_blank'><img src="/src/assets/Icone-Instagram.svg" alt="Logo Instagram" /></a>
+                            <a href="https://www.facebook.com/injunioruff/" target='_blank'><img src="/src/assets/Icone-Facebook.svg" alt="Logo Facebook" /></a>
+                            <a href="https://www.linkedin.com/company/in-junior/?originalSubdomain=br" target='_blank'><img src="/src/assets/Icone-Linkedin.svg" alt="Logo Linkedin" /></a>
                         </div>
                     </div>
                 </div>
