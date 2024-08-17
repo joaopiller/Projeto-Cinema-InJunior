@@ -1,0 +1,61 @@
+:root {
+    --principalSource: #0066CC;
+    --principal900: #003877;
+    --principal800: #004A9B;
+    --principal500: #4A84EC;
+    --principal400: #6D98FB;
+    --principal100: #D2DBFF;
+
+    --cinzaPreto: #000000;
+    --cinza900: #393939;
+    --cinza800: #4B4B4B;
+    --cinza700: #5E5E5E;
+    --cinza600: #727272;
+    --cinza500: #868686;
+    --cinza400: #9B9B9B;
+    --cinza300: #B0B0B0;
+    --cinza200: #C6C6C6;
+    --cinza100: #DDDDDD;
+    --cinza50: #F3F3F3;
+    --cinzaBranco: #FFFFFF;
+
+    --textoSource: #001122;
+    --texto50: #F2F4F7;
+
+    --confirmSource: #00CC54;
+    --confirm600: #00CC54;
+    --confirm400: #00CC54;
+
+    --cancelSource: #CC2014;
+    --cancel700: #BB180F;
+    --cancel600: #D82F1E;
+
+    --callToActionSource: #CC8000;
+    --callToAction500: #BF7600;
+    --callToAction400: #D48C29;
+    --callToAction300: #E6A352;
+
+    --complementarSource: #0BB0E3;
+    --complementar900: #00405E;
+    --complementar800: #00557B;
+    --complementar500: #0092C3;
+    --complementar400: #2BA7D4;
+    --complementar100: #BFE2F5;
+
+    --complementar2-sources: #0BD9D3;
+    --complementar2-900: #004442;
+    --complementar2-800: #005A57;
+    --complementar2-500: #009A95;
+    --complementar2-400: #00AEA9;
+    --complementar2-100: #B6E6E3;
+
+    --sombraSource: #00264D;
+    --sombra900: #2B3955;
+    --sombra800: #394B70;
+    --sombra700: #4A5E89;
+
+    --sombra2-source: #004C99;
+    --sombra2-900: #1A386A;
+    --sombra2-800: #224A8B;
+    --sombra2-700: #305DA8;
+}
