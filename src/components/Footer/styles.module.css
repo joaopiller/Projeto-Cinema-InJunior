@@ -1,0 +1,49 @@
+.footerContent {
+    height: 21.25rem;
+    background-color: var(--sombraSource);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info {
+    width: 18rem;
+    height: 16.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+
+.info h2 {
+    color: var(--cinzaBranco);
+    font-family: var(--roboto);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.info p {
+    color: var(--principal100);
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    letter-spacing: .08rem;
+}
+
+.adress, .contact {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    line-height: 1.6rem;
+}
+
+.footerCopy {
+    height: 2.5rem;
+    background-color: var(--sombra2-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--roboto);
+    color: var(--cinza100);
+    font-weight: 400;
+}
+

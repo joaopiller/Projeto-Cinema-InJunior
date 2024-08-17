@@ -1,4 +1,6 @@
 :root {
+    /* cores */
+
     --principalSource: #0066CC;
     --principal900: #003877;
     --principal800: #004A9B;
@@ -58,4 +60,9 @@
     --sombra2-900: #1A386A;
     --sombra2-800: #224A8B;
     --sombra2-700: #305DA8;
+
+    /* fontes */
+    --nunito: "Nunito Sans", sans-serif;
+    --roboto: "Roboto", sans-serif;
+    --poppins: "Poppins", sans-serif;
 }
