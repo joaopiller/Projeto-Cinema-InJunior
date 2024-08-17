@@ -1,0 +1,26 @@
+.prevButton, .nextButton {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.popcornSwiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    width: 100%;
+}
+
+.slide {
+    width: 100%; 
+    height: auto; 
+    position: relative;
+}
+
+.slideImage {
+    width: 100%;
+    height: auto;
+    max-height: 32.5rem; 
+    object-fit: contain;
+}
