@@ -19,6 +19,7 @@
     "react-router-dom": "^6.26.1",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
+    "swiper": "^11.1.9",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
