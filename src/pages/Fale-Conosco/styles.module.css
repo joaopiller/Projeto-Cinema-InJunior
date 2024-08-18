@@ -1,0 +1,82 @@
+.contactContainer {
+    width: 30.5rem;
+    height: 45.125rem;
+    background-color: var(--principal800);
+    margin: 5rem auto;
+    border-radius: .7rem;
+}
+
+.formHeader {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0 2rem 0;
+    gap: 1.5rem
+}
+
+.formHeader h1 {
+    font-family: var(--nunito);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--texto50);
+    text-align: center;
+}
+
+.formHeader h2 {
+    font-family: var(--roboto);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--texto50);
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.formInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.formInputs input {
+    width: 24.375rem;
+    height: 2.75rem;
+}
+
+.formInputs textarea {
+    resize: none;
+    width: 24.375rem;
+    height: 17.5rem;
+}
+
+.formInputs input, .formInputs textarea {
+    border-radius: .6rem;
+    background-color: var(--principal100);
+    color: #00000080;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: var(--roboto);
+    padding: 1rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.submitButton {
+    border-radius: .6rem;
+    height: 2.75rem;
+    width: 9.125rem;
+    border: none;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    color: var(--cinza50);
+    background-color: var(--principal400);
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: var(--principal500);
+}
