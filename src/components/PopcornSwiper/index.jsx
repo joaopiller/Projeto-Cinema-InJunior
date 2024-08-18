@@ -8,6 +8,7 @@ import previousArrow from '/src/assets/Left.svg';
 import nextArrow from '/src/assets/Right.svg';
 import { useRef } from 'react';
 
+
 export default function PopcornSwiper() {
     const slides = [ticket1, ticket2, ticket3]
     const swiperRef = useRef(null)
