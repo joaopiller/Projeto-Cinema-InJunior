@@ -1,0 +1,63 @@
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: var(--complementar2-500);
+    box-shadow: 0px 4px 4px 0px #00000080;
+    padding: 14px 28px;
+    border-radius: 1rem;
+    width: 50rem;
+    height: 18.125rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+.modalContent h2 {
+    font-family: var(--nunito);
+    color: var(--cinzaBranco);
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.modalContent h3 {
+    font-family: var(--roboto);
+    color: var(--cinza50);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
+
+.modalContent p {
+    font-family: var(--roboto);
+    color: var(--cinza50);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+.closeModal {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    cursor: pointer;
+}
