@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styles from './styles.module.css'
+import AlertModal from '../../components/AlertModal'
+import ContactForm from '../../components/ContactForm'
 
 export default function FaleConosco() {
     const [name, setName] = useState('')
@@ -31,46 +33,8 @@ export default function FaleConosco() {
                 <h1>Contato</h1>
                 <h2>Encontrou algum problema? <br/> Envie uma mensagem!</h2>
             </div>
-            <form onSubmit={handleSubmit} className={styles.formInputs}>
-                <input 
-                    type="text" 
-                    placeholder='Nome Completo' 
-                    value={name} 
-                    onChange={(e) => setName(e.target.value)}
-                    required 
-                />
-                <input 
-                    type="text" 
-                    placeholder='Assunto' 
-                    value={content} 
-                    onChange={(e) => setContent(e.target.value)}
-                    required
-                />
-                <textarea 
-                    name="description" 
-                    placeholder='Descrição Detalhada' 
-                    value={description} 
-                    onChange={(e) => setDescription(e.target.value)}
-                    required>
-                </textarea>
-                <button 
-                    className={styles.submitButton} 
-                    type='submit'
-                >
-                    Enviar
-                </button>
-            </form>
-            {modal && (
-                <div className={styles.modal}>
-                <div className={styles.overlay} onClick={toggleModal}></div>
-                <div className={styles.modalContent}>
-                    <h2>Mensagem Enviada!</h2>
-                    <h3>Obrigado por compartilhar suas observações conosco.</h3>
-                    <p>Sua contribuição é fundamental para melhorarmos continuamente a sua experiência em nosso site. Valorizamos seu tempo e dedicação ao relatar esse problema.</p>
-                    <button className={styles.closeModal} onClick={toggleModal}><img src="/src/assets/CloseModal.svg" alt="Fechar"/></button>
-                </div>
-            </div>
-            )}
+            <ContactForm name={name} setName={setName} content={content} setContent={setContent} description={description} setDescription={setDescription} handleSubmit={handleSubmit}/>
+            {modal && <AlertModal toggleModal={toggleModal} title='Mensagem Enviada!' subtitle='Obrigado por compartilhar suas observações conosco.' text='Sua contribuição é fundamental para melhorarmos continuamente a sua experiência em nosso site. Valorizamos seu tempo e dedicação ao relatar esse problema.' />}
         </div>
     )
 }
