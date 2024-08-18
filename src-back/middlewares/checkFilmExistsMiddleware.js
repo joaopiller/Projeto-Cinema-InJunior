@@ -1,5 +1,5 @@
 import { response } from "express";
-import filmControllrt from "../controllers/filmController"
+import filmController from "../controllers/filmController"
 import { Filmes } from "../models/allModels"
 
 async function checkFilmExists(request, response, next) {
@@ -15,6 +15,8 @@ async function checkFilmExists(request, response, next) {
         if (film) {
             return response.status(400).json({error: "O filme já existe!"});
         }
+
+        request.film = film;
 
         return next()
     }

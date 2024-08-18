@@ -1,5 +1,5 @@
-const Router = require('express').Router;
-const filmRoutes = require('./filmes_routes');
+import Router from 'express';
+import filmRoutes from './filmes_routes';
 
 const router = Router();
 
