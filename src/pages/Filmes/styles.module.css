@@ -1,0 +1,20 @@
+.moviesList {
+    width: 68rem;
+    height: 194rem;
+    margin: 6rem auto;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 7rem;
+    padding: 0 1rem;
+}
+
+.moviesList > h2 {
+    font-family: var(--nunito);
+    font-size: 3rem;
+    color: var(--texto50);
+    font-weight: 700;
+    padding-bottom: 4rem;
+}

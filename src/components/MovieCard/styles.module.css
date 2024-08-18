@@ -1,0 +1,68 @@
+.movieCard {
+    width: 29.063rem;
+    height: 60.625rem;
+    border-radius: .5rem;
+    background: linear-gradient(to bottom, #00264D, #001225);
+    box-shadow: 0px 4px 4px 0px #00000080;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moviePoster {
+    width: 26.375rem;
+    height: 39rem;
+    box-shadow: 0px 5.08px 5.08px 0px #00000040;
+    border-radius: 4px;
+    margin: 1.5rem;
+}
+
+.contentHeader {
+    display: flex;
+    width: 26.375rem;
+    justify-content: space-between;
+    margin-bottom:1.5rem;
+}
+
+.contentHeader > h3 {
+    text-transform: uppercase;
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--texto50)
+}
+
+.contentTexts {
+    width: 26.375rem;
+}
+
+.contentTexts p {
+    font-family: var(--roboto);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: var(--texto50);
+    margin-bottom: .5rem;
+    max-height: 6rem;
+    overflow: auto;    
+}
+
+.verSecoesButton {
+    width: 12.813rem;
+    height: 2.75rem;
+    margin-top: .7rem;
+    border: none;
+    background-color: var(--callToActionSource);
+    border-radius: .5rem;
+    padding: .5rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--texto50);
+    cursor: pointer;
+}
+
+.verSecoesButton:hover {
+    background-color: var(--callToAction500);
+}
