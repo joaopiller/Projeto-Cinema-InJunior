@@ -14,7 +14,7 @@ import {CreateFilm, findFilmByClassification, findFilmByGenre, deleteFilm} from 
 filmRoutes.post('/', checkFilmExists, (req, res)=> CreateFilm(req, res));
 
 // listar(filtrando por classificação)
-filmRoutes.get('/', (req, res)=> findFilmByGenre(req, res));
+filmRoutes.get('/genero', (req, res)=> findFilmByGenre(req, res));
 
 // listar(filtrando por generero)
 filmRoutes.get('/classificacao', (req, res)=> findFilmByClassification(req, res));
