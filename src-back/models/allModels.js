@@ -111,6 +111,10 @@ const Assentos = sequelize.define("Assentos", {
         type:DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false
+    },
+    secaoId:{
+        type: DataTypes.UUID,
+        allowNull: false
     }
 });
 
@@ -142,10 +146,6 @@ const Users = sequelize.define("Users", {
     },
     senha: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    secaoId:{
-        type: DataTypes.UUID,
         allowNull: false
     }
 });
