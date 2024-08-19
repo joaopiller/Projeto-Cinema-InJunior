@@ -20,6 +20,24 @@ async function createSecao(req,res) {
     }
 }
 
+async function listSecoes(req,res) {
+    try{
+        const {filmeId:filmeId} = req.params
+        const secoes = await Secoes.findAll({
+            where:{
+                filmeId:filmeId
+            }
+        })
+        if(!secoes){
+            return res.status(404).json({error:"secao não encontrada"})
+        }
+        return res.status(200).json(secoes)
+    }catch(error){
+        console.error('An error occurred:', error);
+        return res.status(500).json({error:"error get Secoes"})
+    }
+}
+
 
 
 export {
