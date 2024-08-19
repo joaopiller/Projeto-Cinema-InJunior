@@ -1,3 +1,4 @@
+import Selector from '../../components/Selector'
 import styles from './styles.module.css'
 import livre from '/src/assets/ClassificacaoLivre.svg'
 
@@ -12,15 +13,15 @@ export default function Sessoes() {
                             <h2>Bezouro Azul</h2>
                             <img src={livre}/>
                         </div>
-                        <p>Ação, Aventura</p>
-                        <p>Quando um escaravelho alienígena se funde com seu corpo, Jaime ganha uma armadura tecnológica que lhe concede superpoderes incríveis.</p>
+                        <p className={styles.movieGenre}>Ação, Aventura</p>
+                        <p className={styles.movieSinopse}>Quando um escaravelho alienígena se funde com seu corpo, Jaime ganha uma armadura tecnológica que lhe concede superpoderes incríveis.</p>
                         <div className={styles.selectors}>
-                            <select>
-                                <option value="" selected disabled>Cidade</option>
-                            </select>
-                            <select>
-                                <option value="" selected disabled>Bairro</option>
-                            </select>
+                            <Selector tag='Cidade'>
+                                <option value="todos">Todas Cidades</option>
+                            </Selector>
+                            <Selector tag='Bairro'>
+                                <option value="todos">Todos Bairros</option>
+                            </Selector>
                         </div>
                     </div>
                 </div>

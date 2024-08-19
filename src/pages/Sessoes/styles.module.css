@@ -1,15 +1,11 @@
 .sectionBanner {
-    height: 24.063rem;
+    height: 26rem;
     background: linear-gradient(180deg, rgba(0, 38, 77, 0.8) 86.62%, rgba(0, 38, 77, 0) 100%);
-}
-
-.sections {
-    height: 20rem;
 }
 
 .movieInfos {
     display: flex;
-    padding: 2.3rem;
+    padding: 2.5rem;
     gap: 2rem
 }
 
@@ -29,10 +25,42 @@
 
 .movieTitle {
     display: flex;
-    gap: 1rem
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.movieTitle h2 {
+    font-family: var(--nunito);
+    font-weight: 700;
+    color: var(--cinzaBranco);
+    font-size: 3rem;
+    letter-spacing: 4%;
+}
+
+.movieGenre {
+    font-family: var(--roboto);
+    color: var(--cinza200);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    letter-spacing: 4%;
+    margin-bottom: .7rem;
+}
+
+.movieSinopse {
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--cinza50);
+    letter-spacing: 5%;
+    line-height: 1.5rem;
+    max-height: 6rem;
+    max-width: 26.375rem;
+    overflow: auto;
+    margin-bottom: 2rem;
 }
 
 .selectors {
     display: flex;
-    gap: 1rem
+    gap: 2.5rem
 }
