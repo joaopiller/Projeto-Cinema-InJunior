@@ -90,7 +90,27 @@ async function listSecoesFilterByBairro(req,res) {
     }
 }
 
+async function listSecoesFilterByBairroAndCidade(req,res) {
+    try{
+        const { filmeId:filmeId } = req.params
+        const { cidade,bairro } = req.body
+        const secaoFilterByCidade = await Secoes.findAll({
+            where:{
+                filmeId:filmeId,
+                cidade:cidade,
+                bairro:bairro
+            }
+        })
+        if(!secaoFilterByCidade){
+            return res.status(404).json({error:"secao não encontrada"})
+        }
+        return res.status(200).json(secaoFilterByCidade)
 
+
+    }catch(error){
+        res.status(500).json({error:"error in get secao by cidade"})
+    }
+}
 
 export {
     createSecao,
