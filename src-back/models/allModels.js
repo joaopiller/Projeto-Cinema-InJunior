@@ -80,7 +80,6 @@ const Assentos = sequelize.define("Assentos", {
         type: DataTypes.STRING,
         allowNull: true
     },
-<<<<<<< HEAD
     isOcuped:{
         type:DataTypes.BOOLEAN,
         allowNull: false,
@@ -90,8 +89,6 @@ const Assentos = sequelize.define("Assentos", {
         type: DataTypes.UUID,
         allowNull: false
     }
-=======
->>>>>>> parent of 5528fa9 (feat(back): add node_models)
 });
 
 const Users = sequelize.define("Users", {
