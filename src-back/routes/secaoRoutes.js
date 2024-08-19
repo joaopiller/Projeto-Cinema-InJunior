@@ -22,6 +22,7 @@ secaoRouter.get('/:filmeId/bairro',(req,res)=>listSecoesFilterByBairro(req,res))
 //listar secoes por cidade e Bairro
 secaoRouter.get('/:filmeId/cidade/bairro',(req,res)=>listSecoesFilterByBairroAndCidade(req,res));
 
-
+//get a secao
+secaoRouter.get('/:filmeId/:secaoId',findSecao,(req,res)=>getSecao(req,res));
 
 export default secaoRouter
