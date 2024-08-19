@@ -10,7 +10,22 @@ async function getAssento(req, res) {
     }
 }
 
+async function updateAssento(req, res) {
+    try {
+        const { Cpf, Nome } = req.body;
+        const assento = req.assento;
+        const updatedAssento = await assento.update({
+            Cpf: Cpf,
+            Nome: Nome,
+            isOcuped: true
+        });
 
+        return res.status(201).json(updatedAssento);
+    } catch (error) {
+        console.error("houve um erro", error);
+        return res.status(500).json({ error: "erro ao tentar fazer a requisicao" });
+    }
+}
 
 export {
     getAssento,
