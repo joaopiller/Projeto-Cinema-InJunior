@@ -38,6 +38,16 @@ async function listSecoes(req,res) {
     }
 }
 
+async function getSecao(req,res) {
+    try{
+        const secao = req.secao
+        return res.status(200).json(secao)
+    }catch(error){
+        console.error("an error ocurred:", error)
+        res.status(500).json({error:"error in get secao"})
+    }
+}
+
 
 
 export {
