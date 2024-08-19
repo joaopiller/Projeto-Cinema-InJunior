@@ -1,6 +1,4 @@
-import { response } from "express";
-import filmController from "../controllers/filmController"
-import { Filmes } from "../models/allModels"
+import { Filmes } from "../models/allModels.js";
 
 async function checkFilmExists(request, response, next) {
     try {
@@ -13,16 +11,14 @@ async function checkFilmExists(request, response, next) {
         });
 
         if (film) {
-            return response.status(400).json({error: "O filme já existe!"});
+            return response.status(400).json({ error: "O filme já existe!" });
         }
 
-        request.film = film;
-
-        return next()
-    }
-    catch(error) {
-        return response.status(500).json({ error: "Erro ao checar se o filme existe!" })
+        return next();
+    } catch (error) {
+        console.error(error)
+        return response.status(500).json({ error: "Erro ao checar se o filme existe!" });
     }
 }
 
-export default checkFilmExists
+export { checkFilmExists };

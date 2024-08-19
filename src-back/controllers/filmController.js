@@ -1,11 +1,10 @@
-import { Filmes } from "../models/allModels";
+import { Filmes } from "../models/allModels.js";
 
-// Criar um filme 
 async function CreateFilm(request, response) {
     try {
         const { title, Url, sinopse, genero, classificacao, diretor } = request.body;
 
-        if (classificacao < 0 || classificacao < 5) {
+        if (classificacao < 0 || classificacao > 5) {
             return response.status(400).json({error: "Classificacao errada"});
         }
 
@@ -18,49 +17,78 @@ async function CreateFilm(request, response) {
             diretor,
         });
 
-        return request.status(201).json(film.toJSON());
+        return response.status(201).json(film.toJSON());
     }
     catch (error) {
+        console.error("Um erro aconteceu!", error)
         return response.status(400).json({error: "Não possível criar filme!"});
     }
 }
 
 async function findFilmByClassification(request, response) {
     try {
-        const { genero } = request.params;
+        let { classificacao } = request.body;
+        classificacao = parseInt(classificacao);
+
+        if (isNaN(classificacao) || classificacao < 0 || classificacao > 5) {
+            return response.status(400).json({ error: "Classificação não fornecida!" });
+        }
 
         const films = await Filmes.findAll({
             where: {
-                classificacao,
+                classificacao: classificacao,
             },
         });
 
-        return request.status(200).json(films.toJSON());
+        return response.status(200).json(films);
     } catch (error) {
-        return request.status(500).json({ error: "Erro ao achar os filmes!"});
+        console.error("Um erro aconteceu!", error);
+        return response.status(500).json({ error: "Erro ao achar os filmes!"});
     }
 }
 
 async function findFilmByGenre(request, response) {
     try {
-        const { genero } = request.params;
+        const { genero } = request.body;
+
+        if (!genero) {
+            return response.status(400).json({ error: "Gênero não fornecida!" });
+        }
 
         const films = await Filmes.findAll({
             where: {
-                genero,
+                genero: genero,
             },
         });
 
-        return request.status(200).json(films.toJSON());
-    } catch (error) {
-        return request.status(500).json({ error: "Erro ao achar os filmes!"});
+        return response.status(200).json(films);
+
+    } catch(error) {
+        console.error("Um erro aconteceu!", error)
+        return response.status(500).json({ error: "Erro ao achar os filmes!"});
     }
 }
 
+async function deleteFilm(request, response) {
+    try {
+        const film = request.film;
 
+        if (!film) {
+            return response.status(404).json({ error: "Filme não encontrado!" });
+        }
 
-export default {
+        await film.destroy();
+
+        return response.status(204).send();
+    } catch(error) {
+        console.error("Um erro aconteceu!", error)
+        return response.status(500).json({ error: "Erro ao deletar o filme!" })
+    }
+}
+
+export {
     CreateFilm,
     findFilmByClassification,
     findFilmByGenre, 
+    deleteFilm,
 }
