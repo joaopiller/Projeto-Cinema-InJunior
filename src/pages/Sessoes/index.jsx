@@ -27,7 +27,33 @@ export default function Sessoes() {
                 </div>
             </section>
             <section className={styles.sections}>
-
+                <div className={styles.filter}>
+                    <button>2D</button>
+                    <button>3D</button>
+                    <button>IMAX</button>
+                </div>
+                <div className={styles.shedule}>
+                    <div>
+                        <p>2D</p>
+                        <div className={styles.times}>
+                            <button>15:30</button>
+                            <button>20:00</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p>3D</p>
+                        <div className={styles.times}>
+                            <button>13:15</button>
+                            <button>17:20</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p>IMAX</p>
+                        <div className={styles.times}>
+                            <button>21:00</button>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     )
