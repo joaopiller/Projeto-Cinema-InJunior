@@ -24,6 +24,7 @@
     font-family: var(--roboto);
     font-weight: 400;
     padding: 1rem;
+    border: none;
 }
 
 .banner button {
