@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 
-export default function FaleConosco() {
+export function FaleConosco() {
     return (
         <div className={styles.contactContainer}>
             <div className={styles.formHeader}>
