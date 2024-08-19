@@ -4,6 +4,7 @@ import RootLayout from "./pages/RootLayout";
 import FaleConosco from "./pages/Fale-Conosco";
 import Filmes from "./pages/Filmes";
 import Login from "./pages/Login";
+import Registrar from "./pages/Registrar";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         {
             path: '/login',
             element: <Login/>
+        },
+        {
+            path: '/registrar',
+            element: <Registrar/>
         }]
     }
 ])

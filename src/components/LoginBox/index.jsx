@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.css'
 
 export default function LoginBox() {
+    const navigate = useNavigate()
     return (
         <div className={styles.loginBox}>
             <div className={styles.loginHeader}>
@@ -15,7 +17,7 @@ export default function LoginBox() {
                 </div>
                 <button className={styles.entrarButton}>Entrar</button>
             </div>
-            <button className={styles.cadastrarButton}>Cadastre-se</button>
+            <button onClick={() => navigate('/registrar')} className={styles.cadastrarButton}>Cadastre-se</button>
         </div>
     )
 }

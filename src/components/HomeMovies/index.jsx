@@ -16,7 +16,7 @@ export default function HomeMovies() {
                             <Movie name='Elementos' cover='https://br.web.img3.acsta.net/pictures/22/11/17/20/58/0132283.jpg'/>
                         </div>
                         <div className={styles.linkContainer}>
-                            <Link className={styles.linkButton} to=''>Ver Mais</Link>
+                            <Link className={styles.linkButton} to='/filmes'>Ver Mais</Link>
                         </div>
                     </div>
                 </div>
