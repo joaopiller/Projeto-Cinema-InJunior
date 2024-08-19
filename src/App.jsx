@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+//components
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 //pages 
 import Home from './pages/Home/index'
@@ -12,6 +15,7 @@ import Registrar from './pages/Registrar'
 export default function App() {
   return (  
     <BrowserRouter>
+      <ScrollToTop/>
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
