@@ -1,0 +1,144 @@
+.loginWrapper {
+    background-image: url(/src/assets/LoginBackground.svg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem 0;
+}
+
+.loginWrapper img {
+    width: 48.75rem;
+}
+
+.loginWrapper p {
+    width: 36.25rem;
+    height: 14rem;
+    font-family: var(--roboto);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    color: var(--cinza50)
+}
+
+.rightSection {
+    width: 48.75rem;
+    height: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.loginBox {
+    width: 28rem;
+    height: 37.5rem;
+    background-color: var(--principal800);
+    box-shadow: 0px 4px 4px 0px #00000080;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginHeader {
+    width: 24.375rem;
+    height: 10.5rem;
+}
+
+.loginHeader h2 {
+    text-align: center;
+    font-family: var(--nunito);
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 4.063rem;
+    color: var(--texto50);
+    padding-bottom: 1.5rem;
+}
+
+.loginHeader h3 {
+    font-family: var(--roboto);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    color: var(--texto50);
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-bottom: 2px solid var(--cinza50);
+}
+
+.loginInputs input {
+    width: 24.375rem;
+    height: 2.75rem;
+    border-radius: .8rem;
+    border: none;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: var(--principal100);
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: #00000080;
+    padding: 0 .5rem;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+}
+
+.password a {
+    color: var(--cinza100);
+    margin-top: .5rem;
+    padding-right: .5rem;
+    font-size: .75rem;
+    font-family: var(--roboto);
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+.entrarButton {
+    width: 24.375rem;
+    height: 2.75rem;
+    box-shadow: 0px 5px 6px 0px #00000040;
+    border-radius: .8rem;
+    background-color: var(--principal400);
+    border: none;
+    cursor: pointer;
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: var(--cinza50);
+    margin-bottom: 2rem;
+}
+
+.entrarButton:hover {
+    background-color: var(--principal500);
+}
+
+.cadastrarButton {
+    margin-top: 2rem;
+    height: 2.75rem;
+    width: 13.75rem;
+    border: none;
+    cursor: pointer;
+    background-color: var(--confirmSource);
+    border-radius: .8rem;
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    box-shadow: 0px 5px 6px 0px #00000040;
+    color: var(--cinza50)
+}
+
+.cadastrarButton:hover {
+    background-color: #00b44b;
+}
