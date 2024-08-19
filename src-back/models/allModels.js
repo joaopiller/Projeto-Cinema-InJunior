@@ -56,6 +56,33 @@ const Secoes = sequelize.define("Secoes", {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    filmeId:{
+        type: DataTypes.UUID,
+        allowNull:false
+    }
+});
+
+Secoes.addHook('afterCreate', async (secao, options) => {
+    const assentos = [];
+    const fileiras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    const numeroAssentosPorFileira = 18; 
+    const preco = 20.00; // Define um preço fixo ou variável
+
+    fileiras.forEach((fileira) => {
+        for (let numero = 1; numero <= numeroAssentosPorFileira; numero++) {
+            assentos.push({
+                id: uuidv4(),
+                numero: `${fileira}${numero}`,
+                preco,
+                secaoId: secao.id,
+                Cpf: null,
+                Nome: null,
+                isOcuped:false
+            });
+        }
+    });
+
+    await Assentos.bulkCreate(assentos);
 });
 
 const Assentos = sequelize.define("Assentos", {
@@ -65,7 +92,7 @@ const Assentos = sequelize.define("Assentos", {
         primaryKey: true
     },
     numero: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     preco: {
@@ -80,6 +107,11 @@ const Assentos = sequelize.define("Assentos", {
         type: DataTypes.STRING,
         allowNull: true
     },
+    isOcuped:{
+        type:DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    }
 });
 
 const Users = sequelize.define("Users", {
@@ -111,13 +143,17 @@ const Users = sequelize.define("Users", {
     senha: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    secaoId:{
+        type: DataTypes.UUID,
+        allowNull: false
     }
 });
 
-Filmes.hasMany(Secoes, { foreignKey: "filmesId" });
-Secoes.belongsTo(Filmes, { foreignKey: "filmesId" });
-Secoes.hasMany(Assentos, { foreignKey: "secoesId" });
-Assentos.belongsTo(Secoes, { foreignKey: "secoesId" });
+Filmes.hasMany(Secoes, { foreignKey: "filmeId" });
+Secoes.belongsTo(Filmes, { foreignKey: "filmeId" });
+Secoes.hasMany(Assentos, { foreignKey: "secaoId" });
+Assentos.belongsTo(Secoes, { foreignKey: "secaoId" });
 
 export {
     Filmes,
