@@ -5,6 +5,7 @@ import FaleConosco from "./pages/Fale-Conosco";
 import Filmes from "./pages/Filmes";
 import Login from "./pages/Login";
 import Registrar from "./pages/Registrar";
+import Sessoes from "./pages/Sessoes";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         {
             path: '/registrar',
             element: <Registrar/>
+        },
+        {
+            path: '/sessoes',
+            element: <Sessoes/>
         }]
     }
 ])

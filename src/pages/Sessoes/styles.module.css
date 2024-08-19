@@ -1,0 +1,38 @@
+.sectionBanner {
+    height: 24.063rem;
+    background: linear-gradient(180deg, rgba(0, 38, 77, 0.8) 86.62%, rgba(0, 38, 77, 0) 100%);
+}
+
+.sections {
+    height: 20rem;
+}
+
+.movieInfos {
+    display: flex;
+    padding: 2.3rem;
+    gap: 2rem
+}
+
+.movieCover {
+    width: 14.375rem;
+    height: 21.25rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: .5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.movieContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.movieTitle {
+    display: flex;
+    gap: 1rem
+}
+
+.selectors {
+    display: flex;
+    gap: 1rem
+}
