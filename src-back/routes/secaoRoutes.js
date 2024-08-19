@@ -10,6 +10,9 @@ import findSecao from '../middlewares/findSecaoMidware.js';
 //criar secao
 secaoRouter.post('/:filmeId',(req,res)=>createSecao(req,res));
 
+//listar todas as secoes de um filme
+secaoRouter.get('/:filmeId',(req,res)=>listSecoes(req,res));
+
 
 
 export default secaoRouter
