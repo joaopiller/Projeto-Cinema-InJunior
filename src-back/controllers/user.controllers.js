@@ -7,7 +7,6 @@ async function createUser(req, res) {
     try {
         const 
         { 
-            id, 
             nome, 
             sobrenome, 
             aniversario, 
@@ -17,8 +16,7 @@ async function createUser(req, res) {
         } = req.body;
 
 
-        const user = await Users.create({
-            id, 
+        const user = await Users.create({ 
             nome, 
             sobrenome, 
             aniversario, 
