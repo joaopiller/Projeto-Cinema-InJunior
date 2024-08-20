@@ -17,6 +17,17 @@
     
 }
 
+.pagination__item--active {
+  background-color: var(--complementar500);
+  width: 4.243rem;
+  height: 4.25rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.04rem;
+  color: var(--principal100);
+  border-radius: 10%;
+  border: none;
+}
+
 .pagination li + li {
   margin-left: .6rem;
 }

@@ -1,13 +1,6 @@
 import styles from "./styles.module.css";
 import PropTypes from 'prop-types'
 
-Pagination.propTypes = {
-  limit: PropTypes.number,
-  total: PropTypes.number,
-  offset: PropTypes.number,
-  setOffset: PropTypes.func
-}
-
 const max_items = 3;
 const max_left = (max_items - 1) / 2;
 
@@ -57,3 +50,10 @@ const Pagination = ({ limit, total, offset, setOffset }) => {
 };
 
 export default Pagination;
+
+Pagination.propTypes = {
+  limit: PropTypes.number,
+  total: PropTypes.number,
+  offset: PropTypes.number,
+  setOffset: PropTypes.func
+}
