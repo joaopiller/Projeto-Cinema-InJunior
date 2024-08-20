@@ -1,3 +1,5 @@
+/* sessão aside */
+
 .aside {
     background-color: var(--cinza100);
     width: 21rem;
@@ -5,6 +7,8 @@
     margin-bottom: 6rem;
     box-shadow: 4px 0px 4px 0px #00000080;
 }
+
+/* cabeçalho do aside */
 
 .asideHeader {
     width: 21rem;
@@ -22,6 +26,16 @@
     top: 2rem
 }
 
+/* conteúdo do cabeçalho (sem img) */
+
+.asideHeaderContent > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+/* pôster do filme */
+
 .asideHeaderContent img {
     width: 7rem;
     height: 12.5rem;
@@ -30,6 +44,8 @@
     border-radius: 4px;
     box-shadow: 0px 3.27px 3.27px 0px #00000040;
 }
+
+/* título do filme */
 
 .asideHeaderContent h2 {
     font-family: var(--roboto);
@@ -40,11 +56,7 @@
     color: var(--cinzaBranco)
 }
 
-.asideHeaderContent > div {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem
-}
+/* tags de tipo de filme e horário */
 
 .movieTags {
     display: flex;
@@ -68,6 +80,8 @@
     line-height: 1.5rem;
 }
 
+/* main do aside */
+
 .asideMain {
     height: 33.875rem;
     width: auto;
@@ -76,6 +90,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* título 'assentos selecionados' */
 
 .asideMainTitle {
     display: flex;
@@ -92,6 +108,8 @@
     white-space: nowrap;
 }
 
+/* box de assentos selecionados */
+
 .assentosEscolhidos {
     width: 16.875rem;
     height: 22rem;
@@ -99,6 +117,8 @@
     box-shadow: 0px 0px 4px 0px #00000040 inset;
     background-color: #CCCCCC;
 }
+
+/* botão de confirmar */
 
 .asideMain button {
     margin-top: 2rem;

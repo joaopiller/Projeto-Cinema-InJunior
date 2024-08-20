@@ -23,7 +23,7 @@ export default function Filmes() {
     const currentMovies = allMovies.slice(offset, offset + limit);
 
     return (
-        <>
+        <main>
             <FilterBanner />
             <section className={styles.moviesList}>
                 <h2>Filmes</h2>
@@ -49,6 +49,6 @@ export default function Filmes() {
                     setOffset={setOffset}
                 />
             </div>
-        </>
+        </main>
     )
 }

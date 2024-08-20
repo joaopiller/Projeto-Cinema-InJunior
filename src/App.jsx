@@ -7,7 +7,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 //pages 
 import Home from './pages/Home/index'
-import FaleConosco from './pages/Fale-Conosco'
+import FaleConosco from './pages/FaleConosco'
 import Filmes from './pages/Filmes'
 import Login from './pages/Login'
 import Registrar from './pages/Registrar'

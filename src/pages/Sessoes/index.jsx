@@ -1,60 +1,30 @@
-import Selector from '../../components/Selector'
+import MovieSchedule from '../../components/MovieSchedule'
+import SessionsMovieInfo from '../../components/SessionsMovieInfo'
 import styles from './styles.module.css'
-import livre from '/src/assets/ClassificacaoLivre.svg'
 
 export default function Sessoes() {
     return (
-        <>
-            <section className={styles.sectionBanner}>
-                <div className={styles.movieInfos}>
-                    <img className={styles.movieCover} src="https://s2-vogue.glbimg.com/hZWPlrQw6SDMcJJc0Hyvk6x9Tik=/0x0:1080x1350/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_5dfbcf92c1a84b20a5da5024d398ff2f/internal_photos/bs/2023/t/E/Ibo86FSsCU2GbRZkem7Q/whatsapp-image-2023-07-12-at-15.38.47.jpeg" alt="Bezouro Azul" />
-                    <div className={styles.movieContent}>
-                        <div className={styles.movieTitle}>
-                            <h2>Bezouro Azul</h2>
-                            <img src={livre}/>
-                        </div>
-                        <p className={styles.movieGenre}>Ação, Aventura</p>
-                        <p className={styles.movieSinopse}>Quando um escaravelho alienígena se funde com seu corpo, Jaime ganha uma armadura tecnológica que lhe concede superpoderes incríveis.</p>
-                        <div className={styles.selectors}>
-                            <Selector tag='Cidade'>
-                                <option value="todos">Todas Cidades</option>
-                            </Selector>
-                            <Selector tag='Bairro'>
-                                <option value="todos">Todos Bairros</option>
-                            </Selector>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className={styles.sections}>
+        <main>
+            <SessionsMovieInfo />
+            <section className={styles.sessions}>
                 <div className={styles.filter}>
                     <button>2D</button>
                     <button>3D</button>
                     <button>IMAX</button>
                 </div>
-                <div className={styles.shedule}>
-                    <div>
-                        <p>2D</p>
-                        <div className={styles.times}>
-                            <button>15:30</button>
-                            <button>20:00</button>
-                        </div>
-                    </div>
-                    <div>
-                        <p>3D</p>
-                        <div className={styles.times}>
-                            <button>13:15</button>
-                            <button>17:20</button>
-                        </div>
-                    </div>
-                    <div>
-                        <p>IMAX</p>
-                        <div className={styles.times}>
-                            <button>21:00</button>
-                        </div>
-                    </div>
+                <div className={styles.schedule}>
+                    <MovieSchedule movieType='2D'>
+                        <button>13:30</button>
+                        <button>12:45</button>
+                    </MovieSchedule>
+                    <MovieSchedule movieType='3D'>
+                        <button>11:10</button>
+                    </MovieSchedule>
+                    <MovieSchedule movieType='IMAX'>
+                        <button>23:00</button>
+                    </MovieSchedule>
                 </div>
             </section>
-        </>
+        </main>
     )
 }
