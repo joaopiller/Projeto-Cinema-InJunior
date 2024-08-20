@@ -1,0 +1,165 @@
+.sectionBanner {
+    height: 26rem;
+    background: linear-gradient(180deg, rgba(0, 38, 77, 0.8) 86.62%, rgba(0, 38, 77, 0) 100%);
+}
+
+.movieInfos {
+    display: flex;
+    padding: 2.5rem;
+    gap: 2rem
+}
+
+.movieCover {
+    width: 14.375rem;
+    height: 21.25rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: .5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.movieContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.movieTitle {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.movieTitle h2 {
+    font-family: var(--nunito);
+    font-weight: 700;
+    color: var(--cinzaBranco);
+    font-size: 3rem;
+    letter-spacing: 4%;
+}
+
+.movieGenre {
+    font-family: var(--roboto);
+    color: var(--cinza200);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    letter-spacing: 4%;
+    margin-bottom: .7rem;
+}
+
+.movieSinopse {
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--cinza50);
+    letter-spacing: 5%;
+    line-height: 1.5rem;
+    max-height: 6rem;
+    max-width: 26.375rem;
+    overflow: auto;
+    margin-bottom: 2rem;
+}
+
+.selectors {
+    display: flex;
+    gap: 2.5rem
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    width: 57.5rem;
+    height: 44.75rem;
+    margin: 4rem 0 5rem 3rem;
+}
+
+.filter {
+    display: flex;
+    gap: .7rem;
+}
+
+.filter button {
+    width: 6.625rem;
+    height: 3.25rem;
+    border-radius: 1.625rem;
+    background-color: transparent;
+    border: 3px solid var(--principalSource);
+    padding: .5rem 1.25rem .5rem 1.25rem;
+    font-family: var(--poppins);
+    color: var(--principalSource);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 5%;
+}
+
+.filter button:hover {
+    background-color: var(--principalSource);
+    color: rgb(33, 33, 33);
+}
+
+.shedule {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.shedule > div {
+    width: 57.313rem;
+    height: 11.75rem;
+    background-color: #141414;
+    border-radius: .5rem;
+    padding: 1.5rem, 1.5rem, 3rem, 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7em;
+    padding: 1.7rem;
+}
+
+.shedule p {
+    width: 5rem;
+    height: 2.25rem;
+    border-radius: 4px;
+    padding: 0 1.25rem 0 1.25rem;
+    background-color: var(--callToAction400);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--poppins);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 5%;
+    line-height: 2.25rem;
+}
+
+.times {
+    display: flex;
+    gap: 1rem;
+}
+
+.times button {
+    width: 6.625rem;
+    height: 3.25rem;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 3px solid var(--principalSource);
+    padding: .5rem 1.25rem .5rem 1.25rem;
+    font-family: var(--poppins);
+    color: var(--principalSource);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 5%;
+}
+
+.times button:hover {
+    background-color: var(--principalSource);
+    color: rgb(33, 33, 33);
+}

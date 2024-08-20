@@ -11,6 +11,7 @@ import FaleConosco from './pages/Fale-Conosco'
 import Filmes from './pages/Filmes'
 import Login from './pages/Login'
 import Registrar from './pages/Registrar'
+import Sessoes from './pages/Sessoes'
 
 export default function App() {
   return (  
@@ -23,6 +24,7 @@ export default function App() {
         <Route path='/filmes' element={<Filmes/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/registrar' element={<Registrar/>}></Route>
+        <Route path='/sessoes' element={<Sessoes/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
