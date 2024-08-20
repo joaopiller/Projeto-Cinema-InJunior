@@ -1,0 +1,63 @@
+.cinema {
+    width: 56.25rem;
+    height: 43.75rem;
+    background-color: #141414;
+    box-shadow: 0px 0px 8px 4px #141414;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seats {
+    display: flex;
+    height: 32rem;
+    width: 48rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4rem;
+    border-bottom: 5px solid var(--cinza400);
+}
+
+.seats p {
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--cinza400);
+    line-height: 2.5rem;
+    margin-bottom: 1.7rem;
+}
+
+.seatContainer {
+    width: 33.125rem;
+    height: 26rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.seatRow {
+    display: flex;
+    gap: 0.3rem
+}
+
+.seatButton {
+    background-color: transparent;
+    border: 3px solid var(--principal800);
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 1.7rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.caption {
+    width: 48rem;
+}
+
+.caption h3 {
+    font-family: var(--poppins);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cinza300);
+    margin: 1rem 0;
+}
