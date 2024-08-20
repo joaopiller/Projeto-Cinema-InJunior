@@ -34,6 +34,7 @@ const Filmes = sequelize.define("Filmes", {
     },
 });
 
+
 const Secoes = sequelize.define("Secoes", {
     id: {
         type: DataTypes.UUID,
@@ -61,28 +62,7 @@ const Secoes = sequelize.define("Secoes", {
         allowNull:false,
     }
 });
-Secoes.addHook('afterCreate', async (secao, options) => {
-    const assentos = [];
-    const fileiras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-    const numeroAssentosPorFileira = 18; 
-    const preco = 20.00; // Define um preço fixo ou variável
 
-    fileiras.forEach((fileira) => {
-        for (let numero = 1; numero <= numeroAssentosPorFileira; numero++) {
-            assentos.push({
-                id: uuidv4(),
-                numero: `${fileira}${numero}`,
-                preco,
-                secaoId: secao.id,
-                Cpf: null,
-                Nome: null,
-                isOcuped:false
-            });
-        }
-    });
-
-    await Assentos.bulkCreate(assentos);
-});
 
 const Assentos = sequelize.define("Assentos", {
     id: {
@@ -153,6 +133,77 @@ Filmes.hasMany(Secoes, { foreignKey: "filmeId" });
 Secoes.belongsTo(Filmes, { foreignKey: "filmeId" });
 Secoes.hasMany(Assentos, { foreignKey: "secaoId" });
 Assentos.belongsTo(Secoes, { foreignKey: "secaoId" });
+
+Filmes.addHook('afterCreate', async (filme, options) => {
+    const horarios = ['15:30', '17:30', '16:00', '14:30', '20:00', '21:30', '18:00', '19:30', '10:00', '11:30']
+    const bairrosRj = ['Tijuca', 'Copacabana']
+    const bairrosNt = ['Icarai', 'Centro']
+    const cidades = ['Rio de Janeiro', 'Niteroi']
+    const min = 0;
+    const max = 9;
+    const maxBairro = 1; // Índice máximo válido para os arrays de bairros
+
+    for (let i = 1; i <= 6; i++) {
+        const randomNumberHorarios = Math.floor(Math.random() * (max - min + 1)) + min;
+        const randomNumberBairro = Math.floor(Math.random() * (maxBairro + 1)); // Agora gera 0 ou 1
+        var secao = 0
+
+        if (i % 2 == 0) {
+            var secao = {
+                id: uuidv4(),
+                horario: horarios[randomNumberHorarios],
+                cidade: cidades[0],
+                bairro: bairrosRj[randomNumberBairro], // Sempre válido
+                tipo: i % 3,
+                filmeId:filme.id
+            }
+        } else {
+            var secao = {
+                id: uuidv4(),
+                horario: horarios[randomNumberHorarios],
+                cidade: cidades[1],
+                bairro: bairrosNt[randomNumberBairro], // Sempre válido
+                tipo: i % 3,
+                filmeId:filme.id
+            }
+        }
+
+        await Secoes.create(secao)
+        
+    }
+
+    // await Secoes.bulkCreate(secoes);
+})
+
+Secoes.addHook('afterCreate', async (secao, options) => {
+    console.log('Criando assentos para a seção:', secao.id); // Verifique se este log aparece
+
+    try {
+        const assentos = [];
+        const fileiras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+        const numeroAssentosPorFileira = 18; 
+        const preco = 20.00;
+
+        fileiras.forEach((fileira) => {
+            for (let numero = 1; numero <= numeroAssentosPorFileira; numero++) {
+                assentos.push({
+                    id: uuidv4(),
+                    numero: `${fileira}${numero}`,
+                    preco: preco,
+                    secaoId: secao.id,
+                    Cpf: null,
+                    Nome: null,
+                    isOcuped: false
+                });
+            }
+        });
+
+        await Assentos.bulkCreate(assentos);
+        console.log('Assentos criados com sucesso para a seção:', secao.id);
+    } catch (error) {
+        console.error('Erro ao criar assentos:', error);
+    }
+})
 
 export {
     Filmes,
