@@ -7,10 +7,10 @@ const secoesRoutes = express.Router();
 //import findSecoes from "../middlewares/findFilmMiddleware"
 
 // Inclusão dos Controllers
-import { CreateSecoes } from "../controllers/secoesController.js";
+//import { CreateSecoes } from "../controllers/secoesController.js";
 
 // Criar filme
-secoesRoutes.post('/', (req, res)=> CreateSecoes(req, res));
+//secoesRoutes.post('/', (req, res)=> CreateSecoes(req, res));
 
 // Deletar usuário
 //secoesRoutes.delete('/:id', (req, res)=> secoesController.deleteSecoes(req, res))
