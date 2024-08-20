@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 
-export default function Header() {
+export function Header() {
     return (
     <div className={styles.header}>
       <Link to='/'><img className={styles.headerLogo} src='/src/assets/Logo.svg' alt="Logo Cinema" /></Link>
