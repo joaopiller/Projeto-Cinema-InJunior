@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 export default function Filmes() {
     const limit = 6;
-    const totalMovies = 20; // Total de filmes que você tem
+    const totalMovies = 20; 
     const [offset, setOffset] = useState(0);
 
     // Simulando um array de filmes
@@ -21,7 +21,6 @@ export default function Filmes() {
         movieGenres: 'Aventura, Animação'
     });
 
-    // Determinando quais filmes serão exibidos na página atual
     const currentMovies = allMovies.slice(offset, offset + limit);
 
     return (
@@ -52,5 +51,5 @@ export default function Filmes() {
                 />
             </div>
         </>
-    );
+    )
 }
