@@ -1,5 +1,17 @@
 import { Filmes } from "../models/allModels.js";
 
+
+// Listar todos os filmes
+async function getAllFilms(req, res){
+    try{
+        const films = await Filmes.findAll();
+        res.status(200).json(films);
+    }catch(error){
+        console.error("an error occured",error)
+        res.status(404).json({error:"not found all flilms"})
+    }
+}
+
 async function CreateFilm(request, response) {
     try {
         const { title, Url, sinopse, genero, classificacao, diretor } = request.body;
@@ -91,4 +103,5 @@ export {
     findFilmByClassification,
     findFilmByGenre, 
     deleteFilm,
+    getAllFilms,
 }

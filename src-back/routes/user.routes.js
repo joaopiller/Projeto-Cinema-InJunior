@@ -6,9 +6,12 @@ const userRoutes = express.Router();
 
 
 // Inclusão dos Controllers
-import createUser from "../controllers/user.controllers";
+import { createUser, loginUser } from "../controllers/user.controllers.js"
 
 // Criar filme
-filmRoutes.post('/', createUser);
+userRoutes.post('/', createUser);
 
-export default filmRoutes;
+//login User
+userRoutes.get('/login', loginUser);
+
+export default userRoutes;
