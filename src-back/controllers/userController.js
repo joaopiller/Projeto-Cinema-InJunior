@@ -1,4 +1,4 @@
-import { Users } from './allModels.js'; 
+import { Users } from '../models/allModels.js'; 
 import bcrypt from 'bcrypt'; 
 
 

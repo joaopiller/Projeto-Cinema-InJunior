@@ -4,7 +4,7 @@ import {
     createFilm,
     updateFilm,
     deleteFilm
-} from '../models/filmController.js';
+} from '../controllers/filmController.js';
 
 const router = express.Router();
 

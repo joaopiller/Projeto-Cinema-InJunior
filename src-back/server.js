@@ -1,7 +1,7 @@
 import express from 'express';
 import createDataBase from '../script/createDataBase.js';
-import filmRoutes from './models/filmRoutes.js';
-import userRoutes from './models/userRoutes.js';
+import filmRoutes from './routes/filmRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 
 const app = express();
