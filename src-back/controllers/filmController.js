@@ -1,5 +1,5 @@
 import { Filmes } from "../models/allModels.js";
-
+import { Op } from 'sequelize'
 
 // Listar todos os filmes
 async function getAllFilms(req, res){
@@ -69,10 +69,11 @@ async function findFilmByGenre(request, response) {
 
         const films = await Filmes.findAll({
             where: {
-                genero: genero,
-            },
+                genero: {
+                    [Op.like]: `%${genero}%`
+                }
+            }
         });
-
         return response.status(200).json(films);
 
     } catch(error) {

@@ -1,4 +1,4 @@
-/* alert box */
+/* confirm */
 
 .modal, .overlay {
     width: 100vw;
@@ -14,7 +14,7 @@
     background: rgba(49,49,49,0.8);
 }
 
-/* conteúdo da alert box */
+/* conteúdo da confirm box */
 
 .modalContent {
     position: absolute;
@@ -22,11 +22,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
+    background: var(--callToActionSource);
     box-shadow: 0px 4px 4px 0px #00000080;
     padding: 14px 28px;
     border-radius: 1rem;
     width: 50rem;
-    height: 18.125rem;
+    height: 22.188rem;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -40,14 +41,6 @@
     font-size: 3rem;
 }
 
-.modalContent h3 {
-    font-family: var(--roboto);
-    color: var(--cinza50);
-    font-weight: 500;
-    font-size: 1.5rem;
-    line-height: 2.2rem;
-}
-
 .modalContent p {
     font-family: var(--roboto);
     color: var(--cinza50);
@@ -56,22 +49,38 @@
     line-height: 1.5rem;
 }
 
-/* botão de fechar alert box */
+.buttons {
+    display: flex;
+    padding-top: 2rem;
+    padding-left: 2.5rem;
+    gap: 3rem
+}
 
-.closeModal {
-    position: absolute;
-    background-color: transparent;
-    height: 2rem;
-    width: 2.188rem;
-    border-radius: 50%;
+.cancelButton, .confirmButton {
     border: none;
-    top: 10px;
-    right: 10px;
-    padding: 5px 7px;
+    width: 16.25rem;
+    height: 6.625rem;
+    border-radius: 1rem;
     cursor: pointer;
-    font-size: 2rem;
-    font-family: var(--nunito);
-    font-weight: 700;
-    color: var(--cinzaBranco);
-    padding-right: 2rem;
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--cinza50);
+    font-size: 2.25rem;
+    box-shadow: 0px 4px 4px 0px #00000080;
+}
+
+.cancelButton {
+    background-color: var(--cancel700);
+}
+
+.cancelButton:hover {
+    background-color: #ab160e;
+}
+
+.confirmButton {
+    background-color: var(--confirm400);
+}
+
+.confirmButton:hover {
+    background-color: #02a845;
 }

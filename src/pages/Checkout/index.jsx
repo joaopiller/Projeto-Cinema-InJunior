@@ -3,7 +3,7 @@ import CinemaSeats from '../../components/CinemaSeats';
 
 export default function Checkout() {
     return (
-        <div 
+        <main 
             style={{
                 display: 'flex',
                 gap: '9rem'
@@ -11,6 +11,6 @@ export default function Checkout() {
         >
             <CheckoutAside />
             <CinemaSeats />
-        </div>
+        </main>
     )
 }

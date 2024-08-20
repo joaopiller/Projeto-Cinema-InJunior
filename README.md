@@ -1,5 +1,7 @@
 Projeto C{IN}EMA In Júnior 🎥
 
+Nome do Grupo: Cinem{IN}
+
 Desenvolvedores:
 - João Vicente Piller Menezes (front-end)
 - Flávio Leonardo Figueira Flores (front-end)
