@@ -6,6 +6,10 @@
     margin: 6rem auto;
 }
 
+.moviesList.fewerMovies {
+    height: auto; /* Ajusta a altura dinamicamente conforme o conteúdo */
+}
+
 .movies {
     display: flex;
     flex-wrap: wrap;
