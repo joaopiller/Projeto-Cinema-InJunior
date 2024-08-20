@@ -11,6 +11,7 @@
     "devBack": "nodemon src-back/server.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "projeto-final-injunior": "file:",
     "prop-types": "^15.8.1",
