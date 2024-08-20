@@ -1,3 +1,5 @@
+/* container do cabeçalho */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -10,12 +12,16 @@
     z-index: 100;
 }
 
+/* logo C{IN}EMA */
+
 .headerLogo {
     display: flex;
     width: 15.625rem;
     height: 6.125rem;
     align-items: center;
 }
+
+/* ícones de navegação */
 
 .linkIcons {
     display: flex;

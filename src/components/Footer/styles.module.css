@@ -1,3 +1,5 @@
+/* container do rodapé */
+
 .footerContent {
     height: 21.25rem;
     background-color: var(--sombraSource);
@@ -5,6 +7,8 @@
     justify-content: space-around;
     align-items: center;
 }
+
+/* sessão esquerda: endereço e contato */
 
 .info {
     width: 18rem;
@@ -36,10 +40,14 @@
     line-height: 1.6rem;
 }
 
+/* sessão esquerda: redes sociais */
+
 .socialMedia {
     display: flex;
     gap: .5rem
 }
+
+/* copyright */
 
 .footerCopy {
     height: 2.5rem;

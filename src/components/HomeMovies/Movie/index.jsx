@@ -12,7 +12,7 @@ export default function Movie(props) {
         <div className={styles.movie}>
             <img src={props.cover} alt={'Pôster ' + props.name} />
             <p>{props.name}</p>
-            <button>SEÇÕES DISPONÍVEIS</button>
+            <button>SESSÕES DISPONÍVEIS</button>
         </div>
     )
 }

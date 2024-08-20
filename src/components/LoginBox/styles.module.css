@@ -1,3 +1,5 @@
+/* container de login */
+
 .loginBox {
     width: 28rem;
     height: 37.5rem;
@@ -9,6 +11,8 @@
     align-items: center;
     justify-content: center;
 }
+
+/* cabeçalho do login */
 
 .loginHeader {
     width: 24.375rem;
@@ -33,6 +37,8 @@
     color: var(--texto50);
 }
 
+/* inputs de login */
+
 .loginInputs {
     display: flex;
     flex-direction: column;
@@ -55,6 +61,8 @@
     padding: 0 .5rem;
 }
 
+/* input de senha e 'esqueci minha senha' */
+
 .password {
     display: flex;
     flex-direction: column;
@@ -69,6 +77,8 @@
     font-weight: 500;
     line-height: 1rem;
 }
+
+/* botão de entrar */
 
 .entrarButton {
     width: 24.375rem;
@@ -89,6 +99,8 @@
 .entrarButton:hover {
     background-color: var(--principal500);
 }
+
+/* botão de cadastrar */
 
 .cadastrarButton {
     margin-top: 2rem;

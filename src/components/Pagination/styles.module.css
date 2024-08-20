@@ -1,72 +1,71 @@
+/* container de paginação */
+
 .pagination {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none; /* remove os marcadores padrão da lista */
-    padding: 0;
-    margin: 0;
-    
-  }
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
   
-  .pagination li {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+/* botão de página */
+
+.pagination li {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
     
-  }
+}
 
-  .pagination li + li {
-    margin-left: .6rem;
-  }
+.pagination li + li {
+  margin-left: .6rem;
+}
 
-  .pagination__item--active {
-    background-color: var(--complementar500);
-    width: 4.243rem;
-    height: 4.25rem;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.04rem;
-    color: var(--principal100);
-    border-radius: 10%;
-    border: none;
-  }
+.buttonPage {
+  background-color: var(--sombraSource);
+  width: 4.243rem;
+  height: 4.25rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.04rem;
+  color: var(--principal100);
+  border-radius: 10%;
+  border: none;
+  cursor: pointer;
+}
 
-  .buttonPage {
-    background-color: var(--sombraSource);
-    width: 4.243rem;
-    height: 4.25rem;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.04rem;
-    color: var(--principal100);
-    border-radius: 10%;
-    border: none;
-    
-    
-  }
+/* botão da página atual */
 
-  .currentPage {
-    background-color: #007bff; /* Cor de fundo desejada */
-    color: white; /* Cor do texto */
-  }
+.currentPage {
+  background-color: #007bff; 
+  color: white; 
+}
 
-  .navButtonAdd {
-    border-radius: 6.8px 27.2px 27.2px 6.8px;
-    width: 4.243rem;
-    height: 4.25rem;
-    background-color: #004C99;
-    border: none;
-    color: transparent;
-    background-image: url(/src/assets/SetaProx.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+/* botão de próximo */
 
-  .navButtonSub {
-    border-radius: 27.2px 6.8px 6.8px 27.2px;
-    width: 4.243rem;
-    height: 4.25rem;
-    background-color: #004C99;
-    border: none;
-    color: transparent;
-    background-image: url(/src/assets/SetaAnte.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+.navButtonAdd {
+  border-radius: 6.8px 27.2px 27.2px 6.8px;
+  width: 4.243rem;
+  height: 4.25rem;
+  background-color: #004C99;
+  border: none;
+  color: transparent;
+  background-image: url(/src/assets/SetaProx.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* botão de anterior */
+
+.navButtonSub {
+  border-radius: 27.2px 6.8px 6.8px 27.2px;
+  width: 4.243rem;
+  height: 4.25rem;
+  background-color: #004C99;
+  border: none;
+  color: transparent;
+  background-image: url(/src/assets/SetaAnte.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
