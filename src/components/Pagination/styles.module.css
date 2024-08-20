@@ -41,3 +41,32 @@
     
     
   }
+
+  .currentPage {
+    background-color: #007bff; /* Cor de fundo desejada */
+    color: white; /* Cor do texto */
+  }
+
+  .navButtonAdd {
+    border-radius: 6.8px 27.2px 27.2px 6.8px;
+    width: 4.243rem;
+    height: 4.25rem;
+    background-color: #004C99;
+    border: none;
+    color: transparent;
+    background-image: url(/src/assets/SetaProx.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .navButtonSub {
+    border-radius: 27.2px 6.8px 6.8px 27.2px;
+    width: 4.243rem;
+    height: 4.25rem;
+    background-color: #004C99;
+    border: none;
+    color: transparent;
+    background-image: url(/src/assets/SetaAnte.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
