@@ -34,7 +34,7 @@ export default function FaleConosco() {
                 <h2>Encontrou algum problema? <br/> Envie uma mensagem!</h2>
             </div>
             <ContactForm name={name} setName={setName} content={content} setContent={setContent} description={description} setDescription={setDescription} handleSubmit={handleSubmit}/>
-            {modal && <AlertModal toggleModal={toggleModal} title='Mensagem Enviada!' subtitle='Obrigado por compartilhar suas observações conosco.' text='Sua contribuição é fundamental para melhorarmos continuamente a sua experiência em nosso site. Valorizamos seu tempo e dedicação ao relatar esse problema.' />}
+            {modal && <AlertModal toggleModal={toggleModal} title='Mensagem Enviada!' subtitle='Obrigado por compartilhar suas observações conosco.' text='Sua contribuição é fundamental para melhorarmos continuamente a sua experiência em nosso site. Valorizamos seu tempo e dedicação ao relatar esse problema.' backColor='#009A95'/>}
         </main>
     )
 }

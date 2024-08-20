@@ -41,7 +41,7 @@ export default function Registrar() {
                 Nosso formulário de cadastro é o primeiro passo para embarcar nessa jornada emocionante. Ao preenchê-lo, você se tornará um membro da nossa comunidade, onde amantes do cinema se reúnem para compartilhar o entusiasmo, as emoções e as histórias que permeiam cada cena.</p>
             </div>
             <RegistrationForm handleSubmit={handleSubmit} />
-            {modal && <AlertModal toggleModal={toggleModal} title='Cadastro Criado!' subtitle='Bem-Vindo à Nossa Comunidade Cinematográfica!' text='Obrigado por se juntar a nós na nossa comunidade cinematográfica. Sua jornada para uma experiência cinematográfica única começa agora. Você será redirecionado em instantes para página de login em instantes.' />}
+            {modal && <AlertModal toggleModal={toggleModal} title='Cadastro Criado!' subtitle='Bem-Vindo à Nossa Comunidade Cinematográfica!' text='Obrigado por se juntar a nós na nossa comunidade cinematográfica. Sua jornada para uma experiência cinematográfica única começa agora. Você será redirecionado em instantes para página de login em instantes.' backColor='#009A95' />}
         </main>
     )
 }
