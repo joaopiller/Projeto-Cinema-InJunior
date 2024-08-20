@@ -1,0 +1,43 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none; /* remove os marcadores padrão da lista */
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+  .pagination li {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    
+  }
+
+  .pagination li + li {
+    margin-left: .6rem;
+  }
+
+  .pagination__item--active {
+    background-color: var(--complementar500);
+    width: 4.243rem;
+    height: 4.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.04rem;
+    color: var(--principal100);
+    border-radius: 10%;
+    border: none;
+  }
+
+  .buttonPage {
+    background-color: var(--sombraSource);
+    width: 4.243rem;
+    height: 4.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.04rem;
+    color: var(--principal100);
+    border-radius: 10%;
+    border: none;
+    
+    
+  }

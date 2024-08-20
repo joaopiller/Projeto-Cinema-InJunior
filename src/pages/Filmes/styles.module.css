@@ -18,3 +18,12 @@
     font-weight: 700;
     padding-bottom: 4rem;
 }
+
+.pagesButton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    align-items: center;
+    
+
+}
