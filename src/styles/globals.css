@@ -73,3 +73,11 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+option {
+    font-size: 1rem;
+}
+
+select:hover {
+    background-color: rgb(1, 81, 118);
+}

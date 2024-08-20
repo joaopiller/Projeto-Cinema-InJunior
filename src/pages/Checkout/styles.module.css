@@ -1,0 +1,133 @@
+.checkout{
+    display: flex;
+    gap: 9em
+}
+
+.aside {
+    background-color: var(--cinza100);
+    width: 21rem;
+    height: 48.75rem;
+    margin-bottom: 6rem;
+    box-shadow: 4px 0px 4px 0px #00000080;
+}
+
+.asideHeader {
+    width: 21rem;
+    height: 14.875rem;
+    background-color: var(--sombraSource);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.asideHeaderContent {
+    display: flex;
+    gap: .7rem;
+    position: relative;
+    top: 2rem
+}
+
+.asideHeaderContent img {
+    width: 7rem;
+    height: 12.5rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    box-shadow: 0px 3.27px 3.27px 0px #00000040;
+}
+
+.asideHeaderContent h2 {
+    font-family: var(--roboto);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    letter-spacing: 4%;
+    color: var(--cinzaBranco)
+}
+
+.asideHeaderContent > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem
+}
+
+.movieTags {
+    display: flex;
+    gap: .7rem
+}
+
+.movieTags p {
+    width: 3.375rem;
+    height: 1.563rem;
+    border-radius: 2.5px;
+    padding: 4.17px, 10.42px, 4.17px, 10.42px;
+    background-color: var(--callToAction400);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--poppins);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 5%;
+    line-height: 1.5rem;
+}
+
+.asideMain {
+    height: 33.875rem;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.asideMainTitle {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.asideMainTitle h3 {
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5rem;
+    white-space: nowrap;
+}
+
+.assentosEscolhidos {
+    width: 16.875rem;
+    height: 22rem;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px 0px #00000040 inset;
+    background-color: #CCCCCC;
+}
+
+.asideMain button {
+    margin-top: 2rem;
+    width: 7.5rem;
+    height: 3rem;
+    border-radius: .5rem;
+    background-color: var(--callToActionSource);
+    border: none;
+    padding: .75rem, .5rem;
+    font-size: 1rem;
+    font-family: var(--poppins);
+    font-weight: 600;
+    color: var(--cinza50);
+    cursor: pointer;
+}
+
+.asideMain button:hover{
+    background-color: #c37c02;
+}
+
+.cinema {
+    width: 56.25rem;
+    height: 43.75rem;
+    background-color: #141414;
+    box-shadow: 0px 0px 8px 4px #141414;
+    margin-top: 3rem;
+}
