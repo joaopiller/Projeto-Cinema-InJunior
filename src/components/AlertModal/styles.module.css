@@ -1,3 +1,5 @@
+/* alert box */
+
 .modal, .overlay {
     width: 100vw;
     height: 100vh;
@@ -11,6 +13,9 @@
 .overlay {
     background: rgba(49,49,49,0.8);
 }
+
+/* conteúdo da alert box */
+
 .modalContent {
     position: absolute;
     top: 50%;
@@ -51,6 +56,8 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
 }
+
+/* botão de fechar alert box */
 
 .closeModal {
     position: absolute;

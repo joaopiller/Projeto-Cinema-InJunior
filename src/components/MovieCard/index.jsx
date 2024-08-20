@@ -23,7 +23,7 @@ export default function MovieCard({ movieCoverImg, movieName, movieRateImg, movi
                 <p>Direção: {movieDirector}</p>
                 <p>{movieDescription}</p>
             </div>
-            <button className={styles.verSecoesButton}>VER SEÇÕES</button>
+            <button className={styles.verSecoesButton}>VER SESSÕES</button>
         </div>
     )
 }

@@ -1,3 +1,5 @@
+/* container de introdução da home */
+
 .introduction {
     height: 16.875rem;
     background-image: url(/src/assets/IntroducaoHome.jpg);
@@ -13,6 +15,8 @@
     padding-left: 4rem;
 }
 
+/* título da introdução */
+
 .introduction h1 {
     font-family: var(--nunito);
     color: var(--cinzaBranco);
@@ -21,6 +25,8 @@
     width: 58rem;
     line-height: 3.5rem;
 }
+
+/* texto da introdução */
 
 .introduction p {
     font-family: var(--roboto);

@@ -11,7 +11,6 @@ export default function Filmes() {
     const totalMovies = 20; 
     const [offset, setOffset] = useState(0);
 
-    // Simulando um array de filmes
     const allMovies = Array(totalMovies).fill({
         movieCoverImg: 'https://static.wixstatic.com/media/737e63_a9c4fd0ebd9648dfbeecdafd328ea33c~mv2.jpg/v1/fill/w_700,h_1000,al_c,q_85,usm_0.66_1.00_0.01/737e63_a9c4fd0ebd9648dfbeecdafd328ea33c~mv2.jpg',
         movieName: 'Elementos',
@@ -24,7 +23,7 @@ export default function Filmes() {
     const currentMovies = allMovies.slice(offset, offset + limit);
 
     return (
-        <>
+        <main>
             <FilterBanner />
             <section className={styles.moviesList}>
                 <h2>Filmes</h2>
@@ -50,6 +49,6 @@ export default function Filmes() {
                     setOffset={setOffset}
                 />
             </div>
-        </>
+        </main>
     )
 }
