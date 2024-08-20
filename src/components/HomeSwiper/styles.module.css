@@ -1,8 +1,4 @@
-.prevButton, .nextButton {
-    background: none; 
-    border: none; 
-    cursor: pointer; 
-}
+/* container do swiper */
 
 .popcornSwiper {
     display: flex;
@@ -11,6 +7,8 @@
     padding: 5rem 3rem 3rem;
     width: 100%;
 }
+
+/* slide individual */
 
 .slide {
     width: 100%; 
@@ -23,4 +21,12 @@
     height: auto;
     max-height: 32.5rem; 
     object-fit: contain;
+}
+
+/* botões de passar e voltar */
+
+.prevButton, .nextButton {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
 }

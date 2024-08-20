@@ -1,3 +1,5 @@
+/* card de filme */
+
 .movieCard {
     width: 29.063rem;
     height: 60.625rem;
@@ -9,6 +11,8 @@
     align-items: center;
 }
 
+/* pôster do filme */
+
 .moviePoster {
     width: 26.375rem;
     height: 39rem;
@@ -16,6 +20,8 @@
     border-radius: 4px;
     margin: 1.5rem;
 }
+
+/* header do card */
 
 .contentHeader {
     display: flex;
@@ -32,6 +38,8 @@
     color: var(--texto50)
 }
 
+/* textos do card: gênero, diretor e sinopse */
+
 .contentTexts {
     width: 26.375rem;
 }
@@ -46,6 +54,8 @@
     max-height: 6rem;
     overflow: auto;    
 }
+
+/* botão de ver sessões */
 
 .verSecoesButton {
     width: 12.813rem;

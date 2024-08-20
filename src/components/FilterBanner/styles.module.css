@@ -1,3 +1,5 @@
+/* banner de filtragem */
+
 .banner {
     height: 15.625rem;
     width: 100%;
@@ -9,6 +11,8 @@
     align-items: center;
     gap: 2rem
 }
+
+/* input de pesquisar */
 
 .banner form {
     position: relative;
@@ -27,6 +31,8 @@
     border: none;
 }
 
+/* botão de pesquisar */
+
 .banner button {
     position: absolute;
     right: -9px;
@@ -37,6 +43,8 @@
     border: none;
     cursor: pointer;
 }
+
+/* seletores de classificação e gênero */
 
 .selectors {
     display: flex;

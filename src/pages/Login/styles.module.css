@@ -1,3 +1,5 @@
+/* main login */
+
 .loginWrapper {
     background-image: url(/src/assets/LoginBackground.svg);
     background-size: cover;
@@ -8,6 +10,8 @@
     gap: 2rem;
     padding: 5rem 0;
 }
+
+/* logo C{IN}EMA e texto descritivo */
 
 .loginWrapper img {
     width: 48.75rem;
