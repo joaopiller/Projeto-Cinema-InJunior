@@ -17,27 +17,31 @@ const Pagination = ({ limit, total, offset, setOffset }) => {
     <ul className={styles.pagination}>
       <li>
         <button
+          className={styles.navButtonSub}
           onClick={() => onPageChange(current - 1)}
           disabled={current === 1}
         >
-          &lt;
         </button>
       </li>
       {Array.from({ length: Math.min(max_items, pages) })
-    .map((_, index) => index + first)
-    .map((page) => (
-        <li key={Math.floor(Math.random() * 1000000) + 1}>
-            <button className={styles.buttonPage} onClick={() => onPageChange(page)}>
-                {page}
+        .map((_, index) => index + first)
+        .filter(page => page <= pages)
+        .map((page) => (
+          <li key={page}>
+            <button
+              className={`${styles.buttonPage} ${page === current ? styles.currentPage : ''}`}
+              onClick={() => onPageChange(page)}
+            >
+              {page}
             </button>
-        </li>
-    ))}
+          </li>
+        ))}
       <li>
         <button
+          className={styles.navButtonAdd}
           onClick={() => onPageChange(current + 1)}
           disabled={current === pages}
         >
-          &gt;
         </button>
       </li>
     </ul>
