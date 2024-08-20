@@ -11,6 +11,7 @@
     "devBack": "nodemon src-back/server.js"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "nodemon": "^3.1.4",
     "prop-types": "^15.8.1",
