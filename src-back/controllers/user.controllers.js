@@ -13,7 +13,7 @@ async function createUser(req, res) {
             username,
             email,
             senha
-        } = req.body;
+        } = req.usuario;
 
 
         const user = await Users.create({ 
