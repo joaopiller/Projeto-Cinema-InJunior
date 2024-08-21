@@ -2,12 +2,8 @@ import styles from './styles.module.css'
 import FilterBanner from '../../components/FilterBanner'
 import MovieCard from '../../components/MovieCard'
 import Pagination from '../../components/Pagination'
+
 import { useEffect, useState } from 'react'
-import livre from '/src/assets/L.svg'
-import doze from '/src/assets/12.svg'
-import quatorze from '/src/assets/14.svg'
-import dezesseis from '/src/assets/16.svg'
-import dezoito from '/src/assets/18.png'
 
 export default function Filmes() {
     const limit = 6;
@@ -40,21 +36,8 @@ export default function Filmes() {
             film.title.toLowerCase().includes(searchTerm.toLowerCase())
         )
 
-    const currentMovies = filteredMovies.slice(offset, offset + limit)
 
-    function rateImg(rate) {
-        if (rate === 0) {
-            return livre
-        } else if (rate === 1) {
-            return doze
-        } else if (rate === 2) {
-            return quatorze
-        } else if (rate === 3) {
-            return dezesseis
-        } else if (rate === 4) {
-            return dezoito
-        }
-    }
+    const currentMovies = filteredMovies.slice(offset, offset + limit)
 
     return (
         <main>
@@ -69,7 +52,6 @@ export default function Filmes() {
                     ) : (
                         currentMovies.map((film) => (
                             <MovieCard
-                                movieRateImg={rateImg(film.classificacao)}
                                 key={film.id}
                                 movieCoverImg={film.Url}
                                 movieName={film.title}
