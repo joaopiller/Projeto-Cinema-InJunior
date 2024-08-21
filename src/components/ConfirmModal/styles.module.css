@@ -49,6 +49,8 @@
     line-height: 1.5rem;
 }
 
+/* botões de cancelamento e confirmação */
+
 .buttons {
     display: flex;
     padding-top: 2rem;
