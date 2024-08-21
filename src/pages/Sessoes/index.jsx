@@ -13,6 +13,7 @@ import dezoito from '/src/assets/18.png'
 export default function Sessoes() {
     const { filmId } = useParams()
     const [ film, setFilm ] = useState([])
+    const [ sessions, setSessions ] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:3000/films/${filmId}`)
@@ -30,6 +31,22 @@ export default function Sessoes() {
         });
     }, [filmId]);
 
+    useEffect(() => {
+        fetch(`http://localhost:3000/secao/${filmId}`)
+        .then((resposta) => {
+            if (!resposta.ok) {
+                throw new Error('Erro na resposta da API');
+            }
+            return resposta.json();
+        })
+        .then((data) => {
+            setSessions(data);
+        })
+        .catch((error) => {
+            console.error('Erro ao buscar dados:', error);
+        });
+    },[filmId])
+
     function rateImg(rate) {
         if (rate === 0) {
             return livre
@@ -44,6 +61,17 @@ export default function Sessoes() {
         } else if (rate === 5) {
             return dezoito
         }
+    }
+
+    function getSchedules(sessions, type) {
+        return sessions.map((session) => {
+            if ((type === '2d' && session.tipo === 0) ||
+                (type === '3d' && session.tipo === 1) ||
+                (type === 'imax' && session.tipo === 2)) {
+                return <button key={session.id}>{session.horario}</button>
+            }
+            return null
+        })
     }
 
     return (
@@ -63,14 +91,13 @@ export default function Sessoes() {
                 </div>
                 <div className={styles.schedule}>
                     <MovieSchedule movieType='2D'>
-                        <button>13:30</button>
-                        <button>12:45</button>
+                        {getSchedules(sessions, '2d')}
                     </MovieSchedule>
                     <MovieSchedule movieType='3D'>
-                        <button>11:10</button>
+                        {getSchedules(sessions, '2d')}
                     </MovieSchedule>
                     <MovieSchedule movieType='IMAX'>
-                        <button>23:00</button>
+                        {getSchedules(sessions, 'imax')}
                     </MovieSchedule>
                 </div>
             </section>
