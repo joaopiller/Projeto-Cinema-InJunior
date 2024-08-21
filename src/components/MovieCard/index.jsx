@@ -20,7 +20,7 @@ export default function MovieCard({ movieCoverImg, movieName, movieRateImg, movi
             </div>
             <div className={styles.contentTexts}>
                 <p>{movieGenres}</p>
-                <p>Direção: {movieDirector}</p>
+                <p>{movieDirector}</p>
                 <p>{movieDescription}</p>
             </div>
             <button className={styles.verSecoesButton}>VER SESSÕES</button>

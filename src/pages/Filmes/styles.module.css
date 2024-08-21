@@ -31,3 +31,11 @@
     margin-bottom: 2rem;
     align-items: center;
 }
+
+.alertMessage {
+    font-family: var(--nunito);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cinzaBranco);
+    text-align: center;
+}
