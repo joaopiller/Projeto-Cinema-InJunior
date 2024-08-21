@@ -1,6 +1,7 @@
 import Selector from '../Selector'
 import styles from './styles.module.css'
-import PropTypes from 'prop-types' 
+import PropTypes from 'prop-types'
+import { useState } from 'react'
 
 SessionsMovieInfo.propTypes = {
     cover: PropTypes.string,
@@ -11,6 +12,31 @@ SessionsMovieInfo.propTypes = {
 }
 
 export default function SessionsMovieInfo(props) {
+    const [selectedCity, setSelectedCity] = useState('')
+
+    const handleCityChange = (event) => {
+        setSelectedCity(event.target.value)
+    }
+
+    const getNeighborhoods = () => {
+        if (selectedCity === 'rj') {
+            return (
+                <>
+                    <option value="tijuca">Tijuca</option>
+                    <option value="copacabana">Copacabana</option>
+                </>
+            )
+        } else if (selectedCity === 'niteroi') {
+            return (
+                <>
+                    <option value="centro">Centro</option>
+                    <option value="icarai">Icaraí</option>
+                </>
+            )
+        }
+        return null
+    }
+
     return (
         <section className={styles.sessionsBanner}>
             <div className={styles.movieInfos}>
@@ -23,11 +49,12 @@ export default function SessionsMovieInfo(props) {
                     <p className={styles.movieGenre}>{props.genres}</p>
                     <p className={styles.movieSinopse}>{props.sinopse}</p>
                     <div className={styles.selectors}>
-                        <Selector tag='Cidade'>
-                            <option value="todos">Todas Cidades</option>
+                        <Selector tag='Cidade' onChange={handleCityChange}>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="niteroi">Niterói</option>
                         </Selector>
                         <Selector tag='Bairro'>
-                            <option value="todos">Todos Bairros</option>
+                            {getNeighborhoods()}
                         </Selector>
                     </div>
                 </div>

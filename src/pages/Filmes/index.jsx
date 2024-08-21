@@ -38,29 +38,29 @@ export default function Filmes() {
     }, [])
 
     const filteredMovies = films.filter(film => {
-        const matchesSearch = searchTerm.trim() === '' || film.title.toLowerCase().includes(searchTerm.toLowerCase());
-        const genres = film.genero.split(', ');
-        const matchesGenre = selectedGenre === 'all' || genres.includes(selectedGenre);
-        const matchesRating = selectedRating === 'all' || film.classificacao === parseInt(selectedRating);
+        const matchesSearch = searchTerm.trim() === '' || film.title.toLowerCase().includes(searchTerm.toLowerCase())
+        const genres = film.genero.split(', ')
+        const matchesGenre = selectedGenre === 'all' || genres.includes(selectedGenre)
+        const matchesRating = selectedRating === 'all' || film.classificacao === parseInt(selectedRating)
 
-        return matchesSearch && matchesGenre && matchesRating;
+        return matchesSearch && matchesGenre && matchesRating
     });
 
-    const currentMovies = filteredMovies.slice(offset, offset + limit);
+    const currentMovies = filteredMovies.slice(offset, offset + limit)
 
     function rateImg(rate) {
         if (rate === 0) {
-            return livre;
+            return livre
         } else if (rate === 1) {
-            return dez;
+            return dez
         } else if (rate === 2) {
-            return doze;
+            return doze
         } else if (rate === 3) {
-            return quatorze;
+            return quatorze
         } else if (rate === 4) {
-            return dezesseis;
+            return dezesseis
         } else if (rate === 5) {
-            return dezoito;
+            return dezoito
         }
     }
 
