@@ -99,10 +99,42 @@ async function deleteFilm(request, response) {
     }
 }
 
+async function getFilm(request,response) {
+    try{
+        const film = request.film
+        return response.status(200).json(film)
+
+    }catch(error){
+        console.error("um erro aconteceu!", error)
+        return response.status(500).json({error: "erro ao encontrar o filme"})
+    }
+}
+
+async function updateFilmAll(request,response) {
+    try{
+        const film = request.film
+        const {title,Url,sinopse,genero,classificacao,diretor} = request.body
+        const updatefilm = await film.update({
+            title:title,
+            Url:Url,
+            sinopse:sinopse,
+            genero:genero,
+            classificacao:classificacao,
+            diretor:diretor
+        })
+        return response.status(202).json(updatefilm)
+    }catch(error){
+        console.error("um erro aconteceu!", error)
+        return response.status(500).json({error: "erro ao encontrar o filme"})
+    }
+}
+
 export {
     CreateFilm,
     findFilmByClassification,
     findFilmByGenre, 
     deleteFilm,
     getAllFilms,
+    updateFilmAll,
+    getFilm
 }
