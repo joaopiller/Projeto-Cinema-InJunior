@@ -79,6 +79,7 @@ export default function Filmes() {
                                 movieDirector={film.diretor}
                                 movieDescription={film.sinopse}
                                 movieGenres={film.genero}
+                                route={`/sessoes/${film.id}`}
                             />
                         ))
                     )}

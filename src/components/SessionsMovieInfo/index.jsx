@@ -18,7 +18,7 @@ export default function SessionsMovieInfo(props) {
                 <div className={styles.movieContent}>
                     <div className={styles.movieTitle}>
                         <h2>{props.title}</h2>
-                        <img src={props.rateImg}/>
+                        <img className={styles.rateImage} src={props.rateImg}/>
                     </div>
                     <p className={styles.movieGenre}>{props.genres}</p>
                     <p className={styles.movieSinopse}>{props.sinopse}</p>

@@ -3,6 +3,12 @@ import MovieSchedule from '../../components/MovieSchedule'
 import SessionsMovieInfo from '../../components/SessionsMovieInfo'
 import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
+import livre from '/src/assets/L.svg'
+import dez from '/src/assets/10.svg'
+import doze from '/src/assets/12.svg'
+import quatorze from '/src/assets/14.svg'
+import dezesseis from '/src/assets/16.svg'
+import dezoito from '/src/assets/18.png'
 
 export default function Sessoes() {
     const { filmId } = useParams()
@@ -24,6 +30,21 @@ export default function Sessoes() {
         });
     }, [filmId]);
 
+    function rateImg(rate) {
+        if (rate === 0) {
+            return livre
+        } else if (rate === 1) {
+            return dez
+        } else if (rate === 2) {
+            return doze
+        } else if (rate === 3) {
+            return quatorze
+        } else if (rate === 4) {
+            return dezesseis
+        } else if (rate === 5) {
+            return dezoito
+        }
+    }
 
     return (
         <main>
@@ -32,6 +53,7 @@ export default function Sessoes() {
                 title={film.title}
                 genres={film.genero}
                 sinopse={film.sinopse}
+                rateImg={rateImg(film.classificacao)} 
             />
             <section className={styles.sessions}>
                 <div className={styles.filter}>

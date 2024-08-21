@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 import PropTypes from 'prop-types'
 
@@ -7,10 +8,11 @@ MovieCard.propTypes = {
     movieName: PropTypes.string,
     movieDirector: PropTypes.string,
     movieRateImg: PropTypes.string,
-    movieGenres: PropTypes.string
+    movieGenres: PropTypes.string,
+    route: PropTypes.string
 }
 
-export default function MovieCard({ movieCoverImg, movieName, movieRateImg, movieGenres, movieDirector, movieDescription }) {
+export default function MovieCard({ movieCoverImg, movieName, movieRateImg, movieGenres, movieDirector, movieDescription, route }) {
     return (
         <div className={styles.movieCard}>
             <img className={styles.moviePoster} src={movieCoverImg} alt={movieName} />
@@ -23,7 +25,9 @@ export default function MovieCard({ movieCoverImg, movieName, movieRateImg, movi
                 <p className={styles.oneLineText}>{movieDirector}</p>
                 <p className={styles.description}>{movieDescription}</p>
             </div>
-            <button className={styles.verSecoesButton}>VER SESSÕES</button>
+            <Link to={route}>
+                <button className={styles.verSecoesButton}>VER SESSÕES</button>
+            </Link>
         </div>
     )
 }
