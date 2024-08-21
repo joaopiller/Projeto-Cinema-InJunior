@@ -1,11 +1,38 @@
+import { useParams } from 'react-router-dom'
 import MovieSchedule from '../../components/MovieSchedule'
 import SessionsMovieInfo from '../../components/SessionsMovieInfo'
 import styles from './styles.module.css'
+import { useEffect, useState } from 'react'
 
 export default function Sessoes() {
+    const { filmId } = useParams()
+    const [ film, setFilm ] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/films/${filmId}`)
+        .then((resposta) => {
+            if (!resposta.ok) {
+                throw new Error('Erro na resposta da API');
+            }
+            return resposta.json();
+        })
+        .then((data) => {
+            setFilm(data);
+        })
+        .catch((error) => {
+            console.error('Erro ao buscar dados:', error);
+        });
+    }, [filmId]);
+
+
     return (
         <main>
-            <SessionsMovieInfo />
+            <SessionsMovieInfo 
+                cover={film.Url} 
+                title={film.title}
+                genres={film.genero}
+                sinopse={film.sinopse}
+            />
             <section className={styles.sessions}>
                 <div className={styles.filter}>
                     <button>2D</button>

@@ -15,7 +15,6 @@ export default function HomeMovies() {
             return resposta.json();
         })
         .then((data) => {
-            console.log(data)
             const firstFiveFilms = data.slice(0, 5);
             setFilms(firstFiveFilms);
         })
@@ -31,7 +30,7 @@ export default function HomeMovies() {
                     <div className={styles.moviesContainer}>
                         <div className={styles.movies}>
                             {films.map((film) => (
-                                <Movie key={film.id} cover={film.Url} name={film.title} />
+                                <Movie key={film.id} cover={film.Url} name={film.title} route={`/sessoes/${film.id}`}/>
                             ))}
                         </div>
                         <div className={styles.linkContainer}>

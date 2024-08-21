@@ -32,17 +32,25 @@
 
 /* botão de 'ver sessões' */
 
+.sessionsButton {
+    text-decoration: none;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .movie button {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     padding: .5rem;
     border-radius: .5rem;
     background-color: var(--callToActionSource);
     color: var(--texto50);
     font-family: var(--poppins);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
