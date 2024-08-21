@@ -58,6 +58,11 @@
     cursor: pointer;
 }
 
+.seatButton:hover {
+    background-color: var(--principal500);
+    border-color: var(--principal500);
+}
+
 /* legenda */
 
 .caption {

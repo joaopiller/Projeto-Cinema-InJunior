@@ -5,10 +5,12 @@ import { useState } from 'react';
 import PropTypes from 'prop-types'
 
 FilterBanner.propTypes = {
-    setSearchTerm: PropTypes.func
+    setSearchTerm: PropTypes.func.isRequired,
+    setGenre: PropTypes.func.isRequired,
+    setRating: PropTypes.func.isRequired,
 }
 
-export default function FilterBanner({ setSearchTerm }) {
+export default function FilterBanner({ setSearchTerm, setGenre, setRating }) {
     const [inputValue, setInputValue] = useState('')
 
     const handleSearchChange = (event) => {
@@ -18,6 +20,14 @@ export default function FilterBanner({ setSearchTerm }) {
     const handleSubmit = (event) => {
         event.preventDefault()
         setSearchTerm(inputValue)
+    }
+
+    const handleGenreChange = (event) => {
+        setGenre(event.target.value)
+    }
+
+    const handleRatingChange = (event) => {
+        setRating(event.target.value)
     }
 
     return (
@@ -34,11 +44,27 @@ export default function FilterBanner({ setSearchTerm }) {
                 </button>
             </form>
             <div className={styles.selectors}>
-                <Selector tag='Gênero'>
-                    <option value="todos">Todos Gêneros</option>
+                <Selector tag='Gênero' onChange={handleGenreChange}>
+                    <option value="all">Todos Gêneros</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Animação">Animação</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Fantasia">Fantasia</option>
+                    <option value="Musical">Musical</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Ficção Científica">Ficção Científica</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Comédia">Comédia</option>
                 </Selector>
-                <Selector tag='Classificação'>
-                    <option value="todos">Todas Classificações</option>
+                <Selector tag='Classificação' onChange={handleRatingChange}>
+                    <option value="all">Todas Classificações</option>
+                    <option value="0">Livre</option>
+                    <option value="1">10 anos</option>
+                    <option value="2">12 anos</option>
+                    <option value="3">14 anos</option>
+                    <option value="4">16 anos</option>
+                    <option value="5">18 anos</option>
                 </Selector>
             </div>
         </section>

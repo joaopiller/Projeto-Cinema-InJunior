@@ -14,7 +14,7 @@ export default function CinemaSeats() {
                             {Array.from({length: seatsPerRow}, (_,index) => {
                                 const seatId = `${row}${index+1}`
                                 return (
-                                    <button type='checkbox' key={seatId} className={styles.seatButton}></button>
+                                    <button key={seatId} className={styles.seatButton}></button>
                                 )
                             })}
                         </div>

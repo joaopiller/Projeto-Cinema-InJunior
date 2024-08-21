@@ -8,7 +8,7 @@ Selector.propTypes = {
 
 export default function Selector(props) {
     return (
-        <select className={styles.selector}>
+        <select {...props} className={styles.selector}>
             <option value="" selected disabled>{props.tag}</option>
             {props.children}
         </select>

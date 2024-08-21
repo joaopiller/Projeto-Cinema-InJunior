@@ -80,4 +80,5 @@ option {
 
 select:hover {
     background-color: rgb(1, 81, 118);
+    cursor: pointer;
 }
