@@ -3,7 +3,7 @@
 .movie {
     display: flex;
     flex-direction: column;
-    gap: .7rem;
+    gap: .8rem;
     max-width: 14.375rem; 
 }
 
@@ -45,8 +45,10 @@
     font-size: 1.1rem;
     border: none;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .movie button:hover {
-    background-color: var(--callToAction500);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

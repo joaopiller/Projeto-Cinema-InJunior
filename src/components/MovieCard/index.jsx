@@ -16,12 +16,12 @@ export default function MovieCard({ movieCoverImg, movieName, movieRateImg, movi
             <img className={styles.moviePoster} src={movieCoverImg} alt={movieName} />
             <div className={styles.contentHeader}>
                 <h3>{movieName}</h3>
-                <img src={movieRateImg}/>
+                <img className={styles.movieRate} src={movieRateImg}/>
             </div>
             <div className={styles.contentTexts}>
-                <p>{movieGenres}</p>
-                <p>{movieDirector}</p>
-                <p>{movieDescription}</p>
+                <p className={styles.oneLineText}>{movieGenres}</p>
+                <p className={styles.oneLineText}>{movieDirector}</p>
+                <p className={styles.description}>{movieDescription}</p>
             </div>
             <button className={styles.verSecoesButton}>VER SESSÕES</button>
         </div>
