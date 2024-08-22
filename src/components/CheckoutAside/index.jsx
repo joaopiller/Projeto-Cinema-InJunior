@@ -16,8 +16,6 @@ CheckoutAside.propTypes = {
 export default function CheckoutAside(props) {
     const [confirm, setConfirm] = useState(false)
     const [alert, setAlert] = useState(false)
-    const [name, setName] = useState('')
-    const [cpf, setCpf] = useState('')
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -33,7 +31,7 @@ export default function CheckoutAside(props) {
 
     function toggleConfirm() {
         setConfirm(!confirm)
-        
+
     }
 
     function toggleModal() {
@@ -83,14 +81,10 @@ export default function CheckoutAside(props) {
                             <label>Nome</label>
                             <input
                                 type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
                             />
                             <label>CPF</label>
                             <input
                                 type="text"
-                                value={cpf}
-                                onChange={(e) => setCpf(e.target.value)}
                             />
                         </div>
                     ))}
