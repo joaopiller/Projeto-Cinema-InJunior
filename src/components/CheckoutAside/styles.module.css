@@ -116,7 +116,12 @@
     height: 22rem;
     border-radius: 4px;
     box-shadow: 0px 0px 4px 0px #00000040 inset;
-    background-color: #CCCCCC;
+    background-color: #CCCCCC;;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
 }
 
 /* botão de confirmar */
@@ -138,4 +143,40 @@
 
 .asideMain button:hover{
     background-color: #c37c02;
+}
+
+/* assento selecionado */
+
+.selectedSeat {
+    width: 13.75rem;
+    height: 7.938rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.selectedSeat > h3 {
+    font-family: var(--poppins);
+    font-weight: 600;
+    font-size: 1rem;
+    color: black;
+    border-bottom: 1px solid black;
+    padding-bottom: .3rem;
+}
+
+.selectedSeat > label {
+    font-size: 1rem;
+    font-family: var(--roboto);
+    font-weight: 400;
+    color: black;
+    padding-top: .5rem;
+    padding-bottom: .2rem;
+}
+
+.selectedSeat > input {
+    background-color: var(--cinza50);
+    border: none;
+    border-radius: 2px;
+    border-left: 5px solid var(--principalSource);
+    padding: 0 4px;
 }

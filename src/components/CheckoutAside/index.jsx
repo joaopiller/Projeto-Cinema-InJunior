@@ -78,16 +78,16 @@ export default function CheckoutAside(props) {
                 <div className={styles.assentosEscolhidos}>
                     {props.selectedSeats.map((seat) => (
                         <div key={seat} className={styles.selectedSeat}>
-                            <span>{seat}</span>
+                            <h3>{seat}</h3>
+                            <label>Nome</label>
                             <input
                                 type="text"
-                                placeholder="Nome"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
+                            <label>CPF</label>
                             <input
                                 type="text"
-                                placeholder="CPF"
                                 value={cpf}
                                 onChange={(e) => setCpf(e.target.value)}
                             />
