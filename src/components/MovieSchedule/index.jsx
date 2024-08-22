@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 MovieSchedule.propTypes = {
     movieType: PropTypes.string,
-    children: PropTypes.any
+    children: PropTypes.any,
+    display: PropTypes.string
 }
 
-export default function MovieSchedule({movieType, children}) {
+export default function MovieSchedule({movieType, children, display}) {
     return (
-        <div>
+        <div style={{display: display}}>
             <p>{movieType}</p>
             <div className={styles.times}>
                 {children}
