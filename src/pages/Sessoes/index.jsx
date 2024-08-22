@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import MovieSchedule from '../../components/MovieSchedule'
 import SessionsMovieInfo from '../../components/SessionsMovieInfo'
 import styles from './styles.module.css'
@@ -80,7 +80,7 @@ export default function Sessoes() {
             if ((type === '2d' && session.tipo === 0) ||
                 (type === '3d' && session.tipo === 1) ||
                 (type === 'imax' && session.tipo === 2)) {
-                return <button key={session.id}>{session.horario}</button>;
+                return <button key={session.id}><Link className={styles.noDecoration} to={`/checkout/${session.filmeId}/${session.id}`}>{session.horario}</Link></button>;
             }
             return null
         })

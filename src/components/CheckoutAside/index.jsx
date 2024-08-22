@@ -3,11 +3,30 @@ import styles from './styles.module.css'
 import ConfirmModal from '../ConfirmModal'
 import AlertModal from '../AlertModal'
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-export default function CheckoutAside() {
+CheckoutAside.propTypes = {
+    movieCover: PropTypes.string,
+    movieTitle: PropTypes.string,
+    movieTime: PropTypes.string,
+    movieType: PropTypes.string
+}
+
+export default function CheckoutAside(props) {
     const [confirm, setConfirm] = useState(false)
     const [alert, setAlert] = useState(false)
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (confirm || alert) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'auto'
+        }
+        return () => {
+            document.body.style.overflowY = 'auto'
+        }
+    }, [confirm, alert])
 
     function toggleConfirm() {
         setConfirm(!confirm)
@@ -24,27 +43,26 @@ export default function CheckoutAside() {
         }
     }
 
-    useEffect(() => {
-        if (confirm || alert) {
-            document.body.style.overflowY = 'hidden'
-        } else {
-            document.body.style.overflowY = 'auto'
+    function movieType(type) {
+        if (type == 0) {
+            return '2D'
+        } else if (type == 1) {
+            return '3D'
+        } else if (type == 2) {
+            return 'IMAX'
         }
-        return () => {
-            document.body.style.overflowY = 'auto'
-        }
-    }, [confirm, alert])
+    }
 
     return (
         <aside className={styles.aside}>
             <div className={styles.asideHeader}>
                 <div className={styles.asideHeaderContent}>
-                    <img src="https://s2-gshow.glbimg.com/Qsok9BBxiUUYumcHFVxjlpz_YmA=/0x0:1080x1350/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2023/4/5/K6zOx5SHmEBc0St6TwWA/wbpictures-br-366009318-675765671257349-3859103473660491921-n.jpg"/>
+                    <img src={props.movieCover}/>
                     <div>
-                        <h2>Besouro Azul</h2>
+                        <h2>{props.movieTitle}</h2>
                         <div className={styles.movieTags}>
-                            <p>2D</p>
-                            <p>15:20</p>
+                            <p>{movieType(props.movieType)}</p>
+                            <p>{props.movieTime}</p>
                         </div>
                     </div>
                 </div>

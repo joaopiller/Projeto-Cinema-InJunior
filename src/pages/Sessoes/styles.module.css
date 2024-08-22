@@ -75,3 +75,8 @@
     letter-spacing: 5%;
     line-height: 2.25rem;
 }
+
+.noDecoration {
+    text-decoration: none;
+    color: inherit;
+}

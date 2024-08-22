@@ -26,7 +26,7 @@ export default function App() {
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/registrar' element={<Registrar/>}></Route>
         <Route path='/sessoes/:filmId' element={<Sessoes/>}></Route>
-        <Route path='/checkout' element={<Checkout/>}></Route>
+        <Route path='/checkout/:filmId/:sessionId' element={<Checkout/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
