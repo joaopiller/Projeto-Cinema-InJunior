@@ -53,7 +53,8 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
     letter-spacing: 4%;
-    color: var(--cinzaBranco)
+    color: var(--cinzaBranco);
+    max-width: 8.5rem;
 }
 
 /* tags de tipo de filme e horário */
