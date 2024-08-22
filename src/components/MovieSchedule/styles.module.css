@@ -5,7 +5,7 @@
     gap: 1rem;
 }
 
-.times button {
+.times > * {
     width: 6.625rem;
     height: 3.25rem;
     border-radius: 5px;
@@ -20,9 +20,10 @@
     text-align: center;
     cursor: pointer;
     letter-spacing: 5%;
+    text-decoration: none;
 }
 
-.times button:hover {
+.times > *:hover {
     background-color: var(--principalSource);
     color: rgb(33, 33, 33);
 }

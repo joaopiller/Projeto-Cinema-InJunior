@@ -33,6 +33,7 @@ export default function CheckoutAside(props) {
 
     function toggleConfirm() {
         setConfirm(!confirm)
+        
     }
 
     function toggleModal() {
@@ -94,7 +95,7 @@ export default function CheckoutAside(props) {
                         </div>
                     ))}
                 </div>
-                <button onClick={toggleConfirm}>CONFIRMAR</button>
+                <button type='submit' onClick={toggleConfirm}>CONFIRMAR</button>
             </div>
             {confirm && <ConfirmModal title='Confirmação de Reserva!' text='Tem certeza de que deseja confirmar a reserva?' toggleConfirm={toggleConfirm} toggleModal={toggleModal} />}
             {alert && <AlertModal toggleModal={toggleModal} title='Reserva Confirmada!' subtitle='Sua reserva foi confirmada com sucesso para a sessão selecionada.' text='Estamos felizes em tê-lo conosco para essa experiência cinematográfica. Prepare-se para se envolver em uma jornada emocionante na tela grande!' backColor='#00CC54' />}
