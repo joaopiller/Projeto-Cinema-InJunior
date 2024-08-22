@@ -80,7 +80,7 @@ export default function Sessoes() {
             if ((type === '2d' && session.tipo === 0) ||
                 (type === '3d' && session.tipo === 1) ||
                 (type === 'imax' && session.tipo === 2)) {
-                return <button key={session.id}><Link className={styles.noDecoration} to={`/checkout/${session.filmeId}/${session.id}`}>{session.horario}</Link></button>;
+                return <Link key={session.id} to={`/checkout/${session.filmeId}/${session.id}`}>{session.horario}</Link>;
             }
             return null
         })
