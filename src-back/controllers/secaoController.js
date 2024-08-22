@@ -112,6 +112,23 @@ async function listSecoesFilterByBairroAndCidade(req,res) {
     }
 }
 
+async function updateSecao(req,res) {
+    try{
+        const secao = req.secao
+    const { horario, cidade, bairro, tipo} = req.body
+    const updateSecao = await secao.update({
+        horario:horario,
+        cidade:cidade,
+        bairro:bairro,
+        tipo:tipo,
+    })
+    return res.status(202).json(updateSecao)
+    }catch(error){
+        return res.status(500).json({error:"não foi possivel update seção"})
+    }
+}
+
+
 export {
     createSecao,
     listSecoes,
@@ -119,4 +136,5 @@ export {
     listSecoesFilterByCidade,
     listSecoesFilterByBairro,
     listSecoesFilterByBairroAndCidade,
+    updateSecao
 } 
