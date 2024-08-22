@@ -1,12 +1,13 @@
-import { useParams } from 'react-router-dom';
-import CheckoutAside from '../../components/CheckoutAside';
-import CinemaSeats from '../../components/CinemaSeats';
-import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import CheckoutAside from '../../components/CheckoutAside'
+import CinemaSeats from '../../components/CinemaSeats'
+import { useEffect, useState } from 'react'
 
 export default function Checkout() {
     const { filmId, sessionId } = useParams()
-    const [ film, setFilm ] = useState([])
-    const [session, setSession ] = useState([])
+    const [film, setFilm] = useState([])
+    const [session, setSession] = useState([])
+    const [selectedSeats, setSelectedSeats] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:3000/films/${filmId}`)
@@ -14,15 +15,15 @@ export default function Checkout() {
                 if (!resposta.ok) {
                     throw new Error('Erro na resposta da API')
                 }
-                return resposta.json();
+                return resposta.json()
             })
             .then((data) => {
                 setFilm(data)
             })
             .catch((error) => {
                 console.error('Erro ao buscar dados:', error)
-            });
-    }, [filmId]);
+            })
+    }, [filmId])
 
     useEffect(() => {
         fetch(`http://localhost:3000/secao/${filmId}/${sessionId}`)
@@ -37,18 +38,29 @@ export default function Checkout() {
             })
             .catch((error) => {
                 console.error('Erro ao buscar dados:', error)
-            });
-    }, [filmId, sessionId]);
+            })
+    }, [filmId, sessionId])
+
+    const handleSeatSelection = (seatId) => {
+        setSelectedSeats((prevSeats) => {
+            if (prevSeats.includes(seatId)) {
+                return prevSeats.filter((seat) => seat !== seatId)
+            } else {
+                return [...prevSeats, seatId]
+            }
+        })
+    }
 
     return (
-        <main 
-            style={{
-                display: 'flex',
-                gap: '9rem'
-            }}
-        >
-            <CheckoutAside movieCover={film.Url} movieTitle={film.title} movieTime={session.horario} movieType={session.tipo}/>
-            <CinemaSeats />
+        <main style={{ display: 'flex', gap: '9rem' }}>
+            <CheckoutAside
+                movieCover={film.Url}
+                movieTitle={film.title}
+                movieTime={session.horario}
+                movieType={session.tipo}
+                selectedSeats={selectedSeats}
+            />
+            <CinemaSeats onSeatSelect={handleSeatSelection} />
         </main>
     )
 }

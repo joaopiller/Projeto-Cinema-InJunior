@@ -9,12 +9,15 @@ CheckoutAside.propTypes = {
     movieCover: PropTypes.string,
     movieTitle: PropTypes.string,
     movieTime: PropTypes.string,
-    movieType: PropTypes.string
+    movieType: PropTypes.string,
+    selectedSeats: PropTypes.array.isRequired,
 }
 
 export default function CheckoutAside(props) {
     const [confirm, setConfirm] = useState(false)
     const [alert, setAlert] = useState(false)
+    const [name, setName] = useState('')
+    const [cpf, setCpf] = useState('')
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -57,7 +60,7 @@ export default function CheckoutAside(props) {
         <aside className={styles.aside}>
             <div className={styles.asideHeader}>
                 <div className={styles.asideHeaderContent}>
-                    <img src={props.movieCover}/>
+                    <img src={props.movieCover} />
                     <div>
                         <h2>{props.movieTitle}</h2>
                         <div className={styles.movieTags}>
@@ -72,11 +75,29 @@ export default function CheckoutAside(props) {
                     <img src="/src/assets/Poltrona.svg" alt="Poltrona" />
                     <h3>ASSENTOS ESCOLHIDOS</h3>
                 </div>
-                <div className={styles.assentosEscolhidos}></div>
+                <div className={styles.assentosEscolhidos}>
+                    {props.selectedSeats.map((seat) => (
+                        <div key={seat} className={styles.selectedSeat}>
+                            <span>{seat}</span>
+                            <input
+                                type="text"
+                                placeholder="Nome"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <input
+                                type="text"
+                                placeholder="CPF"
+                                value={cpf}
+                                onChange={(e) => setCpf(e.target.value)}
+                            />
+                        </div>
+                    ))}
+                </div>
                 <button onClick={toggleConfirm}>CONFIRMAR</button>
             </div>
-            {confirm && <ConfirmModal title='Confirmação de Reserva!' text='Tem certeza de que deseja confirmar a reserva?' toggleConfirm={toggleConfirm} toggleModal={toggleModal}/>}
-            {alert && <AlertModal toggleModal={toggleModal} title='Reserva Confirmada!' subtitle='Sua reserva foi confirmada com sucesso para a sessão selecionada.' text='Estamos felizes em tê-lo conosco para essa experiência cinematográfica. Prepare-se para se envolver em uma jornada emocionante na tela grande!' backColor='#00CC54'/>}
+            {confirm && <ConfirmModal title='Confirmação de Reserva!' text='Tem certeza de que deseja confirmar a reserva?' toggleConfirm={toggleConfirm} toggleModal={toggleModal} />}
+            {alert && <AlertModal toggleModal={toggleModal} title='Reserva Confirmada!' subtitle='Sua reserva foi confirmada com sucesso para a sessão selecionada.' text='Estamos felizes em tê-lo conosco para essa experiência cinematográfica. Prepare-se para se envolver em uma jornada emocionante na tela grande!' backColor='#00CC54' />}
         </aside>
     )
 }
