@@ -9,6 +9,8 @@ SessionsMovieInfo.propTypes = {
     rateImg: PropTypes.string,
     genres: PropTypes.string,
     sinopse: PropTypes.string,
+    setCity: PropTypes.func,
+    setNeighborhood: PropTypes.func
 }
 
 export default function SessionsMovieInfo(props) {
@@ -16,21 +18,26 @@ export default function SessionsMovieInfo(props) {
 
     const handleCityChange = (event) => {
         setSelectedCity(event.target.value)
+        props.setCity(event.target.value)
+    }
+
+    const handleNeighborhoodSelection = (event) => {
+        props.setNeighborhood(event.target.value)
     }
 
     const getNeighborhoods = () => {
-        if (selectedCity === 'rj') {
+        if (selectedCity === 'Rio de Janeiro') {
             return (
                 <>
-                    <option value="tijuca">Tijuca</option>
-                    <option value="copacabana">Copacabana</option>
+                    <option value="Tijuca">Tijuca</option>
+                    <option value="Copacabana">Copacabana</option>
                 </>
             )
-        } else if (selectedCity === 'niteroi') {
+        } else if (selectedCity === 'Niteroi') {
             return (
                 <>
-                    <option value="centro">Centro</option>
-                    <option value="icarai">Icaraí</option>
+                    <option value="Centro">Centro</option>
+                    <option value="Icarai">Icaraí</option>
                 </>
             )
         }
@@ -49,11 +56,17 @@ export default function SessionsMovieInfo(props) {
                     <p className={styles.movieGenre}>{props.genres}</p>
                     <p className={styles.movieSinopse}>{props.sinopse}</p>
                     <div className={styles.selectors}>
-                        <Selector tag='Cidade' onChange={handleCityChange}>
-                            <option value="rj">Rio de Janeiro</option>
-                            <option value="niteroi">Niterói</option>
+                        <Selector 
+                            tag='Cidade' 
+                            onChange={handleCityChange}
+                        >
+                            <option value="Rio de Janeiro">Rio de Janeiro</option>
+                            <option value="Niteroi">Niterói</option>
                         </Selector>
-                        <Selector tag='Bairro'>
+                        <Selector 
+                            tag='Bairro'
+                            onChange={handleNeighborhoodSelection}
+                        >
                             {getNeighborhoods()}
                         </Selector>
                     </div>
