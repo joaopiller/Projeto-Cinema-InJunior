@@ -143,7 +143,7 @@ Filmes.addHook('afterCreate', async (filme, options) => {
     const max = 9;
     const maxBairro = 1; // Índice máximo válido para os arrays de bairros
 
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 9; i++) {
         const randomNumberHorarios = Math.floor(Math.random() * (max - min + 1)) + min;
         const randomNumberBairro = Math.floor(Math.random() * (maxBairro + 1)); // Agora gera 0 ou 1
         var secao = 0
