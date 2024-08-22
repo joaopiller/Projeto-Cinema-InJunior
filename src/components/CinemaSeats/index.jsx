@@ -1,3 +1,4 @@
+import SeatButton from '../SeatButton';
 import styles from './styles.module.css'
 
 export default function CinemaSeats() {
@@ -14,7 +15,7 @@ export default function CinemaSeats() {
                             {Array.from({length: seatsPerRow}, (_,index) => {
                                 const seatId = `${row}${index+1}`
                                 return (
-                                    <button key={seatId} className={styles.seatButton}></button>
+                                    <SeatButton key={seatId} text={seatId} className={styles.seatButton}/>
                                 )
                             })}
                         </div>
