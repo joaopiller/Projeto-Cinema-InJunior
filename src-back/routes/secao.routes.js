@@ -2,7 +2,7 @@ import express from 'express';
 const secaoRouter = express.Router();
 
 //importando secao controllers
-import {createSecao,getSecao,listSecoes,listSecoesFilterByBairro,listSecoesFilterByCidade,listSecoesFilterByBairroAndCidade} from '../controllers/secaoController.js';
+import {createSecao,getSecao,listSecoes,listSecoesFilterByBairro,listSecoesFilterByCidade,listSecoesFilterByBairroAndCidade,updateSecao} from '../controllers/secaoController.js';
 
 //importando midlewares
 import findSecao from '../middlewares/findSecaoMidware.js';
@@ -24,5 +24,8 @@ secaoRouter.get('/:filmeId/cidade/bairro',(req,res)=>listSecoesFilterByBairroAnd
 
 //get a secao
 secaoRouter.get('/:filmeId/:secaoId',findSecao,(req,res)=>getSecao(req,res));
+
+//update secao
+secaoRouter.put('/:filmeId/:secaoId',findSecao,(req,res)=>updateSecao(req,res))
 
 export default secaoRouter
