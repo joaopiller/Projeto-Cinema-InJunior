@@ -60,3 +60,24 @@
     color: var(--cinza300);
     margin: 1rem 0;
 }
+
+.occupiedSeat {
+    border: 3px solid;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: var(--sombra800);
+    border: solid 3px var(--sombra800);
+    width: 1.7rem;
+    padding: .2rem;
+    height: 1.5rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+    color: #141414;
+    font-weight: 600;
+    font-size: .7rem;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

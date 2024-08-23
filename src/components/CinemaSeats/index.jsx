@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react'
 import SeatButton from '../SeatButton'
 import styles from './styles.module.css'
 import PropTypes from 'prop-types'
+import { useParams } from 'react-router-dom'
 
 CinemaSeats.propTypes = {
     onSeatSelect: PropTypes.func
@@ -9,6 +11,24 @@ CinemaSeats.propTypes = {
 export default function CinemaSeats({ onSeatSelect }) {
     const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     const seatsPerRow = 18
+    const { sessionId } = useParams()
+    const [seats, setSeats] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/assentos/${sessionId}`)
+            .then((resposta) => {
+                if (!resposta.ok) {
+                    throw new Error('Erro na resposta da API')
+                }
+                return resposta.json()
+            })
+            .then((data) => {
+                setSeats(data)
+            })
+            .catch((error) => {
+                console.error('Erro ao buscar dados:', error)
+            })
+    }, [sessionId])
 
     return (
         <section className={styles.cinema}>
@@ -20,15 +40,19 @@ export default function CinemaSeats({ onSeatSelect }) {
                         <div key={row} className={styles.seatRow}>
                             {Array.from({ length: seatsPerRow }, (_, index) => {
                                 const seatId = `${row}${index + 1}`
-                                return (
+                                const isOccupied = seats.some(seat => seat.numero === seatId && seat.isOcuped)
+
+                                return isOccupied ? (
+                                    <div key={seatId} className={styles.occupiedSeat}></div>
+                                ) : (
                                     <SeatButton
                                         key={seatId}
                                         text={seatId}
-                                        className={styles.seatButton}
                                         onClick={() => onSeatSelect(seatId)}
                                     />
                                 )
                             })}
+
                         </div>
                     ))}
                 </div>

@@ -18,7 +18,7 @@ export default function AlertModal({ toggleModal, title, subtitle, text, backCol
                 <h3>{subtitle}</h3>
                 <p>{text}</p>
                 <button className={styles.closeModal} onClick={toggleModal}>
-                    X
+                    x
                 </button>
             </div>
         </div>
