@@ -34,7 +34,7 @@ async function createUser(req, res) {
 
 async function loginUser(req, res) {
     try {
-        const { username="", email="", senha } = req.body; 
+        const { username="", email="", senha } = req.query; 
 
         if (!senha || (!username && !email)) {
             console.warn("Campos faltando: Nome de usuário ou e-mail e senha são necessários.");
