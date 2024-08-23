@@ -1,9 +1,9 @@
 import styles from './styles.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import ticket1 from '/src/assets/Ticket1.png';
-import ticket2 from '/src/assets/Ticket2.png';
-import ticket3 from '/src/assets/Ticket3.png';
+import ticket1 from '/src/assets/Ticket1.svg';
+import ticket2 from '/src/assets/Ticket2.svg';
+import ticket3 from '/src/assets/Ticket3.svg';
 import previousArrow from '/src/assets/Left.svg';
 import nextArrow from '/src/assets/Right.svg';
 import { useRef } from 'react';

@@ -31,27 +31,30 @@ export default function CheckoutAside(props) {
     }, [confirm, alert])
 
     function toggleConfirm(e) {
-        setConfirm(!confirm)
-        e.preventDefault()
+        e.preventDefault(); 
+        if (props.selectedSeats.length === 0) {
+            return;
+        }
+        setConfirm(!confirm);
     }
 
     function toggleModal() {
         if (confirm) {
-            setConfirm(false)
-            setTimeout(() => setAlert(true), 300)
+            setConfirm(false);
+            setTimeout(() => setAlert(true), 300);
         } else if (alert) {
-            setAlert(false)
-            navigate('/')
+            setAlert(false);
+            navigate('/');
         }
     }
 
     function movieType(type) {
         if (type === 0) {
-            return '2D'
+            return '2D';
         } else if (type === 1) {
-            return '3D'
+            return '3D';
         } else if (type === 2) {
-            return 'IMAX'
+            return 'IMAX';
         }
     }
 
