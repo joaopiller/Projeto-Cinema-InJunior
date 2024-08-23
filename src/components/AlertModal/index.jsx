@@ -13,7 +13,7 @@ export default function AlertModal({ toggleModal, title, subtitle, text, backCol
     return (
         <div className={styles.modal}>
             <div className={styles.overlay} onClick={toggleModal}></div>
-            <div className={styles.modalContent} style={{backgroundColor: backColor}}>
+            <div className={styles.modalContent} style={{ backgroundColor: backColor }}>
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
                 <p>{text}</p>
