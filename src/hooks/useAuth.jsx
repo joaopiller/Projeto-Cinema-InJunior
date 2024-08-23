@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
         const userData = await response.json();
         localStorage.setItem("user", JSON.stringify(userData));
         setUser(userData);
-        navigate("/dashboard");
+        navigate("/");
     } catch (error) {
         console.error('Erro ao fazer login:', error);
         throw error;

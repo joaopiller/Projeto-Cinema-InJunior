@@ -12,7 +12,6 @@ export default function Registrar() {
 
     async function handleSubmit(formData) {
         try {
-            // Enviar dados para a API para criar o usuário
             const response = await fetch('http://localhost:3000/user', {
                 method: 'POST',
                 headers: {
@@ -27,13 +26,12 @@ export default function Registrar() {
                 return;
             }
 
-            // Login automático após o registro bem-sucedido
+            toggleModal()
             login({
                 username: formData.username,
                 senha: formData.senha,
             });
 
-            toggleModal(); // Exibir modal de sucesso
         } catch (error) {
             console.error('Erro ao registrar usuário:', error);
         }
