@@ -21,35 +21,46 @@ export function AuthProvider({ children }) {
 
   async function login(credentials) {
     try {
-      // Criação dos parâmetros de consulta para a URL
-      const params = new URLSearchParams({
-        email: credentials.email || '',
-        username: credentials.username || '',
-        password: credentials.senha,
-      }).toString();
+        // Criação dos parâmetros de consulta para a URL
+        const params = new URLSearchParams();
 
-      const response = await fetch(`http://localhost:3000/login?${params}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        const errorData = await response.text(); // Pegando texto para diagnóstico
-        console.error('Resposta de erro do servidor:', errorData); // Log da resposta de erro
-        throw new Error("Erro ao fazer login: " + (errorData || "Erro desconhecido"));
+        if (credentials.username) {
+          params.append('username', credentials.username);
+        }else{
+        params.append('username','')
       }
 
-      const userData = await response.json();
-      localStorage.setItem("user", JSON.stringify(userData));
-      setUser(userData);
-      navigate("/dashboard"); // Redireciona para o dashboard ou outra página após o login
+        if (credentials.email) {
+            params.append('email', credentials.email);
+        }else{
+          params.append('email','')
+        }
+
+        params.append('senha', credentials.senha);
+
+        console.log(params.toString())
+        console.log(`http://localhost:3000/user/login?${params.toString()}`)
+        
+
+        const response = await fetch(`http://localhost:3000/user/login?${params.toString()}`, {
+            method: 'GET',
+        });
+
+        if (!response.ok) {
+            const errorData = await response.text();
+            console.error('Resposta de erro do servidor:', errorData);
+            throw new Error("Erro ao fazer login: " + (errorData || "Erro desconhecido"));
+        }
+
+        const userData = await response.json();
+        localStorage.setItem("user", JSON.stringify(userData));
+        setUser(userData);
+        navigate("/dashboard");
     } catch (error) {
-      console.error('Erro ao fazer login:', error);
-      throw error;
+        console.error('Erro ao fazer login:', error);
+        throw error;
     }
-  }
+}
 
   function logout() {
     localStorage.removeItem("user");
