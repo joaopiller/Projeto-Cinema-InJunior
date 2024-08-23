@@ -11,6 +11,8 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const [auth, setAuth] = useState(false);
+
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -20,6 +22,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   async function login(credentials) {
+    
     try {
         // Criação dos parâmetros de consulta para a URL
         const params = new URLSearchParams();
@@ -55,16 +58,23 @@ export function AuthProvider({ children }) {
         const userData = await response.json();
         localStorage.setItem("user", JSON.stringify(userData));
         setUser(userData);
-        navigate("/");
+        // navigate("/");
+        setAuth(true);
+        
+        
     } catch (error) {
         console.error('Erro ao fazer login:', error);
         throw error;
     }
+    
+    
 }
+ 
 
   function logout() {
     localStorage.removeItem("user");
     setUser(null);
+    setAuth(false);
     navigate("/login");
   }
 
@@ -72,6 +82,8 @@ export function AuthProvider({ children }) {
     user,
     login,
     logout,
+    auth,
+    setAuth,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
